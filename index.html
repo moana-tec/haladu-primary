@@ -179,58 +179,6 @@ section{padding:80px 0}
 .portal-note{text-align:center;font-size:10px;color:rgba(255,255,255,.3);margin-top:14px}
 .portal-err{background:rgba(192,57,43,.2);border:1px solid rgba(192,57,43,.4);color:#ff8a80;padding:10px 14px;border-radius:8px;font-size:12px;margin-bottom:14px;display:none;text-align:center}
 
-/* ── RESULTS DISPLAY ── */
-#resultsSection{background:var(--light);padding:60px 0;display:none}
-.results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
-.results-header h2{font-size:22px;font-weight:800;color:var(--navy)}
-.signout-btn{background:none;border:1.5px solid var(--border);color:var(--muted);padding:9px 20px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:700}
-.signout-btn:hover{border-color:var(--navy);color:var(--navy)}
-.learner-banner{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px;border-left:5px solid var(--gold)}
-.learner-av2{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;font-weight:900;flex-shrink:0}
-.learner-banner h3{color:#fff;font-size:18px;font-weight:700}
-.learner-banner p{color:rgba(255,255,255,.55);font-size:12px;margin-top:3px}
-.ltags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.ltag{background:rgba(200,168,75,.18);border:1px solid rgba(200,168,75,.3);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:600}
-.sum-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:20px}
-.sum-box{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center}
-.sum-box .val{font-size:22px;font-weight:800;color:var(--navy)}
-.sum-box .lbl{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.4px}
-.term-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
-.ttab{padding:9px 22px;border-radius:22px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted);transition:.15s}
-.ttab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.ttab.locked{opacity:.4;cursor:not-allowed}
-.ttab .soon{font-size:9px;background:var(--gold);color:var(--navy);padding:2px 5px;border-radius:8px;margin-left:4px;font-weight:700}
-.res-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:20px}
-.res-table thead tr{background:var(--navy)}
-.res-table thead th{color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.3px}
-.res-table thead th:nth-child(3),.res-table thead th:nth-child(4),.res-table thead th:nth-child(5){text-align:center}
-.res-table tbody tr{border-bottom:1px solid var(--border)}
-.res-table tbody tr:last-child{border-bottom:none}
-.res-table tbody td{padding:12px 16px;font-size:13px;vertical-align:middle}
-.res-table tbody td:nth-child(3),.res-table tbody td:nth-child(4),.res-table tbody td:nth-child(5){text-align:center}
-.res-table .avg-r{background:var(--light)}
-.res-table .avg-r td{font-weight:700;color:var(--navy)}
-.lo-tag{background:#fffde7;color:#795548;border:1px solid #ffe082;font-size:9px;padding:2px 6px;border-radius:6px;margin-left:5px;font-weight:700}
-.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:700}
-.b7{background:#1a237e;color:#fff}.b6{background:#1565c0;color:#fff}
-.b5{background:#2e7d32;color:#fff}.b4{background:#f57f17;color:#fff}
-.b3{background:#e65100;color:#fff}.b2{background:#b71c1c;color:#fff}
-.b1{background:#4a0000;color:#fff}
-.comments-panel{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:22px;margin-bottom:20px}
-.comments-panel h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
-.c-row{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
-.c-row:last-child{border-bottom:none;padding-bottom:0}
-.c-subj{min-width:140px;font-size:12px;font-weight:700;color:var(--navy);padding-top:2px}
-.c-teacher{font-size:10px;font-weight:400;color:var(--muted);margin-top:2px}
-.c-text{font-size:13px;color:#333;line-height:1.6;flex:1}
-.rec-panel{background:var(--navy);border-radius:14px;padding:22px;border:2px solid var(--gold);margin-bottom:20px}
-.rec-panel h3{color:var(--gold);font-size:13px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.6px}
-.rec-item2{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-.rec-item2:last-child{margin-bottom:0}
-.rec-dot2{width:8px;height:8px;background:var(--gold);border-radius:50%;margin-top:5px;flex-shrink:0}
-.rec-text2{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}
-.rec-subj2{color:var(--gold);font-weight:700}
-
 /* ── CONTACT ── */
 #contact{background:var(--light)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
@@ -595,42 +543,6 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
   </div>
 </section>
 
-<!-- RESULTS SECTION -->
-<section id="resultsSection">
-  <div class="container">
-    <div class="results-header">
-      <h2>📋 Learner Results</h2>
-      <button class="signout-btn" onclick="doSignOut()">← Sign Out</button>
-    </div>
-    <div class="learner-banner">
-      <div class="learner-av2" id="resAv">?</div>
-      <div>
-        <h3 id="resName2">Learner Name</h3>
-        <p id="resSchool2">Haladu Primary School</p>
-        <div class="ltags">
-          <span class="ltag" id="resGrade2"></span>
-          <span class="ltag" id="resID2"></span>
-          <span class="ltag" id="resYear2"></span>
-        </div>
-      </div>
-    </div>
-    <div class="sum-row" id="sumRow"></div>
-    <div class="term-row" id="termRow"></div>
-    <table class="res-table">
-      <thead><tr><th>Subject</th><th>Teacher</th><th>Mark (%)</th><th>Level</th><th>Achievement</th></tr></thead>
-      <tbody id="resBody2"></tbody>
-    </table>
-    <div class="comments-panel">
-      <h3 id="commentsTitle">💬 Teacher Comments</h3>
-      <div id="commentsBody2"></div>
-    </div>
-    <div class="rec-panel">
-      <h3>⭐ Personalised Improvement Recommendations</h3>
-      <div id="recBody2"></div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
@@ -703,56 +615,11 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 
-// ── Learner Data ──
+// ── Learner Data (for login validation only) ──
 const STUDENTS=[
-  {id:'HAL001',pw:'hal001',name:'Sifiso Mhlongo',grade:'Grade 5',year:'2025',terms:{
-    'Term 1':{released:true,subjects:[
-      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:70,comment:'Good number sense. Long division needs more practice to build speed.',rec:'Practise 10 long division problems daily. Use the Moana maths worksheet pack.'},
-      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:63,comment:'Reading fluency is improving. Writing sentences needs more confidence.',rec:'Write 3 sentences daily about your day — this builds writing confidence quickly.'},
-      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:85,comment:'Excellent home language performance. Stories are creative and well-told.',rec:'Keep writing short stories. Try reading a Zulu storybook each week.'},
-      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:68,comment:'Curious learner who asks great questions. Written answers need more detail.',rec:'Use the Moana science diagrams to help structure written answers.'},
-      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:72,comment:'Good map work. History answers need to include more dates and facts.',rec:'Make a history timeline for each chapter — stick it on your wall at home.'},
-    ]},
-    'Term 2':{released:true,subjects:[
-      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:75,comment:'Division speed has improved a lot. Fractions are the next challenge.',rec:'Focus on equivalent fractions using the Moana fraction worksheets.'},
-      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:67,comment:'Sentence construction is much better. Paragraph writing is developing.',rec:'Write one full paragraph per day — describe a place, person or event.'},
-      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:88,comment:'Outstanding — consistently the strongest IsiZulu learner in the class.',rec:'Challenge yourself with longer written tasks — you are ready for it.'},
-      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:72,comment:'Written answers are more detailed now. Experiments are well-observed.',rec:'Always link your observation to the science concept being taught.'},
-      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:76,comment:'History answers now include dates and facts. Map interpretation is great.',rec:'Continue building your history timeline — add Term 2 content to it now.'},
-    ]},
-    'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
-  }},
-  {id:'HAL002',pw:'hal002',name:'Phumzile Zungu',grade:'Grade 6',year:'2025',terms:{
-    'Term 1':{released:true,subjects:[
-      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:66,comment:'Multiplication tables are solid. Percentages and ratios need more attention.',rec:'Use the Moana percentage game in the e-library — practise 15 min per day.'},
-      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:71,comment:'Good reader. Written expression is improving well this term.',rec:'Read one chapter of an English book per day and write a 3-sentence summary.'},
-      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:78,comment:'Strong oral participation. Written work is neat and shows good effort.',rec:'Work on essay structure — introduction, body and conclusion must be clear.'},
-      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:61,comment:'Practical work is good. Theory responses need more scientific vocabulary.',rec:'Learn 5 new science words per week using the Moana science glossary.'},
-      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:74,comment:'Good understanding of geography concepts. History needs more revision.',rec:'Create flashcards for all history key terms — test yourself before each assessment.'},
-    ]},
-    'Term 2':{released:true,subjects:[
-      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:71,comment:'Percentages improving. Ratio problems are now approached with confidence.',rec:'Move on to proportion problems — the Moana workbook has a full section.'},
-      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:75,comment:'Written work shows real improvement. Chapter summaries are well-structured.',rec:'Start writing 5-sentence summaries — this prepares you for Grade 7 essays.'},
-      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:82,comment:'Essay structure has improved markedly. Oral presentation was very confident.',rec:'Challenge yourself — write a short Zulu opinion piece on a topic you care about.'},
-      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:66,comment:'Scientific vocabulary is growing. Continue linking words to concepts.',rec:'Draw and label diagrams from memory — this reinforces both vocab and concepts.'},
-      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:79,comment:'Flashcard method is clearly working — notable improvement in history facts.',rec:'Now focus on explaining causes and effects — not just facts but reasons.'},
-    ]},
-    'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
-  }},
+  {id:'HAL001',pw:'hal001'},
+  {id:'HAL002',pw:'hal002'},
 ];
-
-function getLevel(m){
-  if(m>=80)return{num:7,label:'Outstanding Achievement',cls:'b7'};
-  if(m>=70)return{num:6,label:'Meritorious Achievement',cls:'b6'};
-  if(m>=60)return{num:5,label:'Substantial Achievement',cls:'b5'};
-  if(m>=50)return{num:4,label:'Adequate Achievement',cls:'b4'};
-  if(m>=40)return{num:3,label:'Moderate Achievement',cls:'b3'};
-  if(m>=30)return{num:2,label:'Elementary Achievement',cls:'b2'};
-  return{num:1,label:'Not Achieved',cls:'b1'};
-}
-function ini(n){return n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
-
-let curStudent=null,curTerm=null;
 
 function portalLogin(){
   const id=document.getElementById('pid').value.trim().toUpperCase();
@@ -762,95 +629,21 @@ function portalLogin(){
   if(!id||!pw){err.textContent='Please enter your Learner ID and password.';err.style.display='block';return}
   const st=STUDENTS.find(s=>s.id===id&&s.pw===pw.toLowerCase());
   if(st){
-    curStudent=st;
-    document.getElementById('portal').style.display='none';
-    document.getElementById('resultsSection').style.display='block';
-    renderResults();
-    document.getElementById('resultsSection').scrollIntoView({behavior:'smooth'});
+    window.open('results.html?id='+encodeURIComponent(id)+'&pw='+encodeURIComponent(pw),'_blank');
   } else {
     err.textContent='Incorrect Learner ID or password. Please try again.';
     err.style.display='block';
   }
 }
 
-function renderResults(){
-  document.getElementById('resAv').textContent=ini(curStudent.name);
-  document.getElementById('resName2').textContent=curStudent.name;
-  document.getElementById('resSchool2').textContent='Haladu Primary School · EMIS 700210002';
-  document.getElementById('resGrade2').textContent=curStudent.grade;
-  document.getElementById('resID2').textContent='ID: '+curStudent.id;
-  document.getElementById('resYear2').textContent=curStudent.year;
-  const terms=Object.keys(curStudent.terms);
-  curTerm=terms.find(t=>curStudent.terms[t].released)||terms[0];
-  document.getElementById('termRow').innerHTML=terms.map(t=>{
-    const rel=curStudent.terms[t].released;
-    return`<div class="ttab${t===curTerm?' active':''}${rel?'':' locked'}" onclick="${rel?`switchTerm2('${t}',this)`:'alert(\"Results for this term have not been released yet.\")'}">
-      ${t}${rel?'':'<span class="soon">Soon</span>'}
-    </div>`;
-  }).join('');
-  renderTerm2(curTerm);
-}
-
-function switchTerm2(t,el){
-  document.querySelectorAll('.ttab').forEach(x=>x.classList.remove('active'));
-  el.classList.add('active');
-  curTerm=t;renderTerm2(t);
-}
-
-function renderTerm2(term){
-  const subs=curStudent.terms[term].subjects;
-  if(!subs||!subs.length){
-    document.getElementById('sumRow').innerHTML='';
-    document.getElementById('resBody2').innerHTML=`<tr><td colspan="5" style="text-align:center;padding:28px;color:var(--muted);font-size:13px">Results for ${term} have not been released yet.</td></tr>`;
-    document.getElementById('commentsBody2').innerHTML='<p style="color:var(--muted);font-size:13px">Comments will appear once results are released.</p>';
-    document.getElementById('recBody2').innerHTML='<div class="rec-item2"><div class="rec-dot2"></div><div class="rec-text2">Recommendations will appear once results are released.</div></div>';
-    return;
+// Allow Enter key to submit login
+document.addEventListener('keydown',function(e){
+  if(e.key==='Enter'){
+    const pid=document.getElementById('pid');
+    const ppw=document.getElementById('ppw');
+    if(document.activeElement===pid||document.activeElement===ppw){portalLogin();}
   }
-  const avg=Math.round(subs.reduce((a,s)=>a+s.mark,0)/subs.length);
-  const hi=subs.reduce((a,s)=>s.mark>a.mark?s:a);
-  const lo=subs.filter(s=>!s.lo).reduce((a,s)=>s.mark<a.mark?s:a);
-  const avgLvl=getLevel(avg);
-  document.getElementById('commentsTitle').textContent=`💬 Teacher Comments — ${term}`;
-  document.getElementById('sumRow').innerHTML=`
-    <div class="sum-box"><div class="val">${avg}%</div><div class="lbl">Average</div></div>
-    <div class="sum-box"><div class="val">Level ${avgLvl.num}</div><div class="lbl">${avgLvl.label}</div></div>
-    <div class="sum-box"><div class="val">${subs.filter(s=>s.mark>=50).length}/${subs.length}</div><div class="lbl">Passed</div></div>
-    <div class="sum-box"><div class="val">${hi.mark}%</div><div class="lbl">Best: ${hi.name.split(' ')[0]}</div></div>
-    <div class="sum-box"><div class="val">${lo.mark}%</div><div class="lbl">Needs Work</div></div>`;
-  document.getElementById('resBody2').innerHTML=
-    subs.map(s=>{const l=getLevel(s.mark);return`<tr>
-      <td><strong>${s.name}</strong>${s.lo?'<span class="lo-tag">LO</span>':''}</td>
-      <td style="color:var(--muted);font-size:12px">${s.teacher}</td>
-      <td><strong>${s.mark}%</strong></td>
-      <td><span class="badge ${l.cls}">Level ${l.num}</span></td>
-      <td style="font-size:11px;font-weight:600;color:#444">${l.label}</td>
-    </tr>`}).join('')+
-    `<tr class="avg-r"><td colspan="2"><strong>Overall Average</strong></td>
-    <td><strong>${avg}%</strong></td>
-    <td><span class="badge ${avgLvl.cls}">Level ${avgLvl.num}</span></td>
-    <td style="font-size:11px;font-weight:600;color:#444">${avgLvl.label}</td></tr>`;
-  document.getElementById('commentsBody2').innerHTML=subs.map(s=>`
-    <div class="c-row">
-      <div class="c-subj">${s.name}<div class="c-teacher">${s.teacher}</div></div>
-      <div class="c-text">${s.comment}</div>
-    </div>`).join('');
-  const recs=subs.filter(s=>!s.lo&&s.mark<60).sort((a,b)=>a.mark-b.mark);
-  const showRecs=recs.length?recs:subs.filter(s=>!s.lo).sort((a,b)=>b.mark-a.mark).slice(0,3);
-  document.getElementById('recBody2').innerHTML=showRecs.map(s=>{const l=getLevel(s.mark);return`
-    <div class="rec-item2"><div class="rec-dot2"></div>
-    <div class="rec-text2"><span class="rec-subj2">${s.name} — Level ${l.num} (${s.mark}%):</span> ${s.rec}</div>
-    </div>`}).join('');
-}
-
-function doSignOut(){
-  curStudent=null;curTerm=null;
-  document.getElementById('pid').value='';
-  document.getElementById('ppw').value='';
-  document.getElementById('portalErr').style.display='none';
-  document.getElementById('resultsSection').style.display='none';
-  document.getElementById('portal').style.display='block';
-  document.getElementById('portal').scrollIntoView({behavior:'smooth'});
-}
+});
 
 // Gallery tabs (visual only)
 document.querySelectorAll('.gtab').forEach(t=>{
