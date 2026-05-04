@@ -1,206 +1,82 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haladu Primary School — Nquthu, KwaZulu-Natal</title>
+<title>Learner Results — Haladu Primary School</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --navy:#1a2744;--navy2:#0f1a32;--navy3:#243358;
+  --navy:#1a2744;--navy2:#0f1a32;
   --gold:#f5c800;--gold2:#ffd700;--gold3:#c9a800;
-  --white:#fff;--light:#f8f6f0;--muted:#666;--border:#e0ddd5;
+  --light:#f8f6f0;--white:#fff;--muted:#666;--border:#e0ddd5;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);color:#222;overflow-x:hidden}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);min-height:100vh}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);border-bottom:3px solid var(--gold);box-shadow:0 2px 20px rgba(0,0,0,.3)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-emblem{width:42px;height:42px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:var(--navy);letter-spacing:-.5px;flex-shrink:0}
-.nav-name{color:#fff;font-size:14px;font-weight:700;line-height:1.2}
-.nav-name span{color:var(--gold);font-size:10px;font-weight:400;display:block;letter-spacing:.5px}
-.nav-links{display:flex;gap:4px;align-items:center}
-.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12px;font-weight:600;padding:8px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
-.nav-links a:hover{color:#fff;background:rgba(200,168,75,.2)}
-.portal-btn{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;border-radius:20px!important;padding:8px 16px!important}
-.portal-btn:hover{background:var(--gold2)!important;transform:translateY(-1px)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s}
-.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:var(--navy2);border-bottom:3px solid var(--gold);z-index:998;padding:16px 24px;flex-direction:column;gap:4px}
-.mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;font-weight:600;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block}
-.mobile-menu a:last-child{border-bottom:none;color:var(--gold)}
-.mobile-menu.open{display:flex}
+/* HEADER */
+header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
+.hdr{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
+.hdr-logo{display:flex;align-items:center;gap:12px}
+.hdr-emblem{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--navy)}
+.hdr-name{color:#fff;font-size:14px;font-weight:700;line-height:1.2}
+.hdr-name span{color:rgba(255,255,255,.45);font-size:10px;font-weight:400;display:block}
+.hdr-right{display:flex;align-items:center;gap:12px}
+.moana-badge{color:var(--gold);font-size:11px;font-style:italic}
+.back-btn{background:none;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:7px 16px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;text-decoration:none;transition:.2s}
+.back-btn:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ── HERO ── */
-#home{padding-top:62px}
-.hero{min-height:92vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:
-  radial-gradient(ellipse at 20% 50%,rgba(200,168,75,.12) 0%,transparent 60%),
-  radial-gradient(ellipse at 80% 20%,rgba(26,39,68,.8) 0%,transparent 50%);
-  z-index:1}
-.hero-pattern{position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px;z-index:1}
-.hero-content{max-width:1100px;margin:0 auto;padding:60px 24px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-text{}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.4);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:24px}
-.hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
-.hero h1{font-size:52px;font-weight:900;color:#fff;line-height:1.05;margin-bottom:12px;letter-spacing:-1px}
-.hero h1 span{color:var(--gold)}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:32px;line-height:1.7;max-width:480px}
-.hero-stats{display:flex;gap:32px;margin-bottom:36px}
-.stat{text-align:center}
-.stat-num{font-size:28px;font-weight:900;color:var(--gold);line-height:1}
-.stat-lbl{font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,168,75,.3)}
-.btn-outline{border:2px solid rgba(255,255,255,.3);color:#fff;padding:14px 28px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-.hero-visual{position:relative}
-.photo-stack{position:relative;height:480px}
-.photo-main{position:absolute;top:0;right:0;width:320px;height:360px;border-radius:20px;overflow:hidden;border:4px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.photo-main img{width:100%;height:100%;object-fit:cover}
-.photo-secondary{position:absolute;bottom:0;left:0;width:220px;height:260px;border-radius:16px;overflow:hidden;border:4px solid rgba(200,168,75,.5);box-shadow:0 12px 40px rgba(0,0,0,.3)}
-.photo-secondary img{width:100%;height:100%;object-fit:cover}
-.photo-accent{position:absolute;top:40px;left:10px;width:130px;height:130px;border-radius:12px;overflow:hidden;border:3px solid rgba(200,168,75,.3);box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.photo-accent img{width:100%;height:100%;object-fit:cover}
-.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.8px;text-transform:uppercase;cursor:pointer}
-.scroll-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:bounce 1.5s infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+/* LOGIN PAGE */
+#loginPage{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 62px);padding:24px}
+.login-box{background:#fff;border-radius:20px;border:1.5px solid var(--border);overflow:hidden;width:100%;max-width:420px;box-shadow:0 8px 40px rgba(0,0,0,.1)}
+.login-head{background:var(--navy);padding:32px 28px;text-align:center;border-bottom:4px solid var(--gold)}
+.login-icon{width:68px;height:68px;background:rgba(245,200,0,.15);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:var(--gold);margin:0 auto 14px}
+.login-head h2{color:#fff;font-size:18px;font-weight:700;margin-bottom:4px}
+.login-head p{color:rgba(255,255,255,.45);font-size:11px}
+.login-body{padding:28px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px}
+.field input{width:100%;padding:13px 14px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;outline:none;transition:.2s;background:#fafafa}
+.field input:focus{border-color:var(--gold);background:#fff}
+.login-btn{width:100%;padding:14px;background:var(--navy);color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+.login-btn:hover{background:var(--navy2)}
+.err{background:#fff0f0;border:1px solid #f5c6cb;color:#c0392b;padding:10px 14px;border-radius:8px;font-size:12px;margin-bottom:16px;display:none;text-align:center}
+.login-note{text-align:center;font-size:10px;color:var(--muted);margin-top:14px}
+.spin{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── SECTIONS ── */
-section{padding:80px 0}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold3);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px}
-.section-label::before{content:'';width:24px;height:2px;background:var(--gold)}
-.section-title{font-size:36px;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:16px}
-.section-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:580px;margin-bottom:48px}
+/* RESULTS PAGE */
+#resultsPage{display:none;padding:32px 24px;max-width:1000px;margin:0 auto}
+.res-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.res-topbar h2{font-size:20px;font-weight:800;color:var(--navy)}
+.signout{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600}
+.signout:hover{border-color:var(--navy);color:var(--navy)}
 
-/* ── ABOUT ── */
-#about{background:#fff}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.about-photo{border-radius:14px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.1)}
-.about-photo img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .4s}
-.about-photo:hover img{transform:scale(1.04)}
-.about-photo.tall{grid-row:span 2}
-.about-photo.tall img{height:372px}
-.values{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-.val-card{background:var(--light);border:1.5px solid var(--border);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start}
-.val-icon{width:36px;height:36px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.val-title{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:3px}
-.val-text{font-size:11px;color:var(--muted);line-height:1.5}
-.mission-box{background:var(--navy);border-radius:16px;padding:24px;margin-top:24px;border-left:4px solid var(--gold)}
-.mission-box h4{color:var(--gold);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
-.mission-box p{color:rgba(255,255,255,.8);font-size:14px;line-height:1.7}
-
-/* ── ACADEMICS ── */
-#academics{background:var(--light)}
-.phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
-.phase-card{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:24px;transition:all .2s;cursor:default}
-.phase-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
-.phase-num{font-size:36px;font-weight:900;color:var(--gold);opacity:.3;line-height:1;margin-bottom:8px}
-.phase-name{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
-.phase-grades{font-size:12px;color:var(--gold3);font-weight:600;margin-bottom:12px}
-.phase-subjects{font-size:12px;color:var(--muted);line-height:1.7}
-.subjects-highlight{background:var(--navy);border-radius:16px;padding:32px;display:flex;gap:40px;align-items:center;flex-wrap:wrap}
-.subjects-highlight h3{color:var(--gold);font-size:18px;font-weight:700;margin-bottom:8px}
-.subjects-highlight p{color:rgba(255,255,255,.7);font-size:13px;line-height:1.6;flex:1;min-width:200px}
-.subject-tags{display:flex;flex-wrap:wrap;gap:8px;flex:2}
-.stag{background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.3);color:var(--gold2);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600}
-
-/* ── NEWS ── */
-#news{background:#fff}
-.news-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
-.news-featured{background:var(--navy);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
-.news-feat-img{height:240px;overflow:hidden;position:relative}
-.news-feat-img img{width:100%;height:100%;object-fit:cover}
-.news-feat-img::after{content:'FEATURED';position:absolute;top:16px;left:16px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;padding:4px 10px;border-radius:12px;letter-spacing:.8px}
-.news-feat-body{padding:24px;flex:1}
-.news-feat-date{color:var(--gold);font-size:11px;font-weight:600;margin-bottom:10px}
-.news-feat-title{color:#fff;font-size:20px;font-weight:700;margin-bottom:12px;line-height:1.3}
-.news-feat-text{color:rgba(255,255,255,.65);font-size:13px;line-height:1.7}
-.news-list{display:flex;flex-direction:column;gap:16px}
-.news-item{background:var(--light);border:1.5px solid var(--border);border-radius:14px;padding:18px;transition:all .2s;cursor:pointer}
-.news-item:hover{border-color:var(--gold);background:#fff}
-.news-item-tag{display:inline-block;background:rgba(26,39,68,.08);color:var(--navy);font-size:9px;font-weight:700;padding:3px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.news-item-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.4}
-.news-item-date{font-size:11px;color:var(--muted)}
-
-/* ── GALLERY ── */
-#gallery{background:var(--light)}
-.gallery-tabs{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
-.gtab{padding:9px 20px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:12px;font-weight:700;cursor:pointer;color:var(--muted);transition:all .15s}
-.gtab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.gphoto{border-radius:12px;overflow:hidden;cursor:pointer;position:relative;background:var(--navy)}
-.gphoto img{width:100%;height:160px;object-fit:cover;display:block;transition:all .3s}
-.gphoto:hover img{transform:scale(1.06);opacity:.85}
-.gphoto .caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(15,26,50,.9));color:#fff;font-size:10px;padding:20px 10px 8px;opacity:0;transition:.3s;font-weight:600}
-.gphoto:hover .caption{opacity:1}
-.gphoto.wide{grid-column:span 2}
-.gphoto.wide img{height:200px}
-
-/* ── STAFF ── */
-#staff{background:#fff}
-.staff-intro{display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:center;margin-bottom:48px}
-.staff-quote{background:var(--navy);border-radius:16px;padding:28px;border-left:4px solid var(--gold)}
-.staff-quote blockquote{color:rgba(255,255,255,.85);font-size:15px;line-height:1.7;font-style:italic}
-.staff-quote cite{color:var(--gold);font-size:12px;font-weight:700;font-style:normal;display:block;margin-top:12px}
-.staff-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
-.staff-card{background:var(--light);border:1.5px solid var(--border);border-radius:14px;padding:20px;text-align:center;transition:all .2s}
-.staff-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-.staff-av{width:60px;height:60px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:20px;font-weight:700;color:var(--gold)}
-.staff-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
-.staff-role{font-size:11px;color:var(--muted)}
-.staff-phase{font-size:10px;color:var(--gold3);font-weight:600;margin-top:4px}
-
-/* ── PORTAL ── */
-#portal{background:var(--navy);padding:80px 0}
-.portal-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.portal-text h2{color:#fff;font-size:36px;font-weight:800;margin-bottom:16px;line-height:1.2}
-.portal-text h2 span{color:var(--gold)}
-.portal-text p{color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:28px}
-.portal-features{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
-.pf{display:flex;align-items:center;gap:12px}
-.pf-dot{width:32px;height:32px;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.pf-text{font-size:13px;color:rgba(255,255,255,.8);font-weight:500}
-.portal-card{background:rgba(255,255,255,.05);border:1.5px solid rgba(200,168,75,.3);border-radius:20px;padding:32px;backdrop-filter:blur(10px)}
-.portal-card h3{color:var(--gold);font-size:16px;font-weight:700;margin-bottom:8px;text-align:center}
-.portal-card p{color:rgba(255,255,255,.5);font-size:12px;text-align:center;margin-bottom:24px}
-.portal-field{margin-bottom:16px}
-.portal-field label{display:block;color:rgba(255,255,255,.5);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
-.portal-field input{width:100%;padding:13px 16px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);border-radius:10px;color:#fff;font-size:14px;outline:none;transition:.2s}
-.portal-field input::placeholder{color:rgba(255,255,255,.3)}
-.portal-field input:focus{border-color:var(--gold);background:rgba(255,255,255,.1)}
-.portal-login-btn{width:100%;padding:14px;background:var(--gold);color:var(--navy);border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;margin-top:4px}
-.portal-login-btn:hover{background:var(--gold2)}
-.portal-note{text-align:center;font-size:10px;color:rgba(255,255,255,.3);margin-top:14px}
-.portal-err{background:rgba(192,57,43,.2);border:1px solid rgba(192,57,43,.4);color:#ff8a80;padding:10px 14px;border-radius:8px;font-size:12px;margin-bottom:14px;display:none;text-align:center}
-
-/* ── RESULTS DISPLAY ── */
-#resultsSection{background:var(--light);padding:60px 0;display:none}
-.results-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}
-.results-header h2{font-size:22px;font-weight:800;color:var(--navy)}
-.signout-btn{background:none;border:1.5px solid var(--border);color:var(--muted);padding:9px 20px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:700}
-.signout-btn:hover{border-color:var(--navy);color:var(--navy)}
-.learner-banner{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px;border-left:5px solid var(--gold)}
-.learner-av2{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;font-weight:900;flex-shrink:0}
-.learner-banner h3{color:#fff;font-size:18px;font-weight:700}
-.learner-banner p{color:rgba(255,255,255,.55);font-size:12px;margin-top:3px}
+.learner-card{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px;border-left:5px solid var(--gold)}
+.lav{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;font-weight:900;flex-shrink:0}
+.linfo h3{color:#fff;font-size:18px;font-weight:700}
+.linfo p{color:rgba(255,255,255,.5);font-size:12px;margin-top:2px}
 .ltags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.ltag{background:rgba(200,168,75,.18);border:1px solid rgba(200,168,75,.3);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:600}
-.sum-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:20px}
-.sum-box{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center}
-.sum-box .val{font-size:22px;font-weight:800;color:var(--navy)}
-.sum-box .lbl{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.4px}
-.term-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.ltag{background:rgba(245,200,0,.15);border:1px solid rgba(245,200,0,.3);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:600}
+
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:18px}
+.sum-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center}
+.sum-val{font-size:22px;font-weight:800;color:var(--navy)}
+.sum-lbl{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.4px}
+
+/* Level legend */
+.legend{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:18px}
+.legend h4{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.legend-items{display:flex;flex-wrap:wrap;gap:6px}
+.leg{display:flex;align-items:center;gap:5px;font-size:10px;color:#444}
+.leg-dot{width:28px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700}
+
+.term-tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
 .ttab{padding:9px 22px;border-radius:22px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted);transition:.15s}
 .ttab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 .ttab.locked{opacity:.4;cursor:not-allowed}
 .ttab .soon{font-size:9px;background:var(--gold);color:var(--navy);padding:2px 5px;border-radius:8px;margin-left:4px;font-weight:700}
-.res-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:20px}
+
+.res-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:18px}
 .res-table thead tr{background:var(--navy)}
 .res-table thead th{color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.3px}
 .res-table thead th:nth-child(3),.res-table thead th:nth-child(4),.res-table thead th:nth-child(5){text-align:center}
@@ -208,502 +84,126 @@ section{padding:80px 0}
 .res-table tbody tr:last-child{border-bottom:none}
 .res-table tbody td{padding:12px 16px;font-size:13px;vertical-align:middle}
 .res-table tbody td:nth-child(3),.res-table tbody td:nth-child(4),.res-table tbody td:nth-child(5){text-align:center}
-.res-table .avg-r{background:var(--light)}
-.res-table .avg-r td{font-weight:700;color:var(--navy)}
+.avg-row{background:var(--light)}
+.avg-row td{font-weight:700;color:var(--navy)}
 .lo-tag{background:#fffde7;color:#795548;border:1px solid #ffe082;font-size:9px;padding:2px 6px;border-radius:6px;margin-left:5px;font-weight:700}
 .badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:700}
 .b7{background:#1a237e;color:#fff}.b6{background:#1565c0;color:#fff}
 .b5{background:#2e7d32;color:#fff}.b4{background:#f57f17;color:#fff}
 .b3{background:#e65100;color:#fff}.b2{background:#b71c1c;color:#fff}
 .b1{background:#4a0000;color:#fff}
-.comments-panel{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:22px;margin-bottom:20px}
-.comments-panel h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+
+.comments-box{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:22px;margin-bottom:18px}
+.box-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
 .c-row{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
 .c-row:last-child{border-bottom:none;padding-bottom:0}
 .c-subj{min-width:140px;font-size:12px;font-weight:700;color:var(--navy);padding-top:2px}
-.c-teacher{font-size:10px;font-weight:400;color:var(--muted);margin-top:2px}
+.c-teacher{font-size:10px;color:var(--muted);margin-top:2px}
 .c-text{font-size:13px;color:#333;line-height:1.6;flex:1}
-.rec-panel{background:var(--navy);border-radius:14px;padding:22px;border:2px solid var(--gold);margin-bottom:20px}
-.rec-panel h3{color:var(--gold);font-size:13px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.6px}
-.rec-item2{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
-.rec-item2:last-child{margin-bottom:0}
-.rec-dot2{width:8px;height:8px;background:var(--gold);border-radius:50%;margin-top:5px;flex-shrink:0}
-.rec-text2{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}
-.rec-subj2{color:var(--gold);font-weight:700}
 
-/* ── CONTACT ── */
-#contact{background:var(--light)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.contact-info{display:flex;flex-direction:column;gap:20px}
-.cinfo-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start}
-.cinfo-icon{width:42px;height:42px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.cinfo-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:4px}
-.cinfo-value{font-size:14px;font-weight:600;color:var(--navy)}
-.contact-form{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:28px}
-.contact-form h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:20px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cf{margin-bottom:16px}
-.cf label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.cf input,.cf textarea,.cf select{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;outline:none;transition:.2s;background:#fafafa;font-family:inherit}
-.cf input:focus,.cf textarea:focus,.cf select:focus{border-color:var(--gold);background:#fff}
-.cf textarea{resize:vertical;min-height:100px}
-.submit-btn{width:100%;padding:14px;background:var(--navy);color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:.3px}
-.submit-btn:hover{background:var(--navy2)}
+.rec-box{background:var(--navy);border-radius:14px;padding:22px;border:2px solid var(--gold);margin-bottom:18px}
+.rec-box h3{color:var(--gold);font-size:13px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.6px}
+.rec-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.rec-item:last-child{margin-bottom:0}
+.rec-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;margin-top:5px;flex-shrink:0}
+.rec-text{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}
+.rec-subj{color:var(--gold);font-weight:700}
 
-/* ── FOOTER ── */
-footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 24px}
-.footer-inner{max-width:1100px;margin:0 auto;padding:0 24px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px}
-.footer-brand p{color:rgba(255,255,255,.5);font-size:13px;line-height:1.7;margin-top:12px}
-.footer-col h4{color:var(--gold);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px}
-.footer-col a{display:block;color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;margin-bottom:8px;transition:.2s}
-.footer-col a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:12px}
-.footer-bottom p{color:rgba(255,255,255,.35);font-size:11px}
-.moana-credit{color:var(--gold);font-size:11px;font-weight:600}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .hero-content{grid-template-columns:1fr;gap:40px}
-  .hero h1{font-size:36px}
-  .hero-visual{display:none}
-  .about-grid{grid-template-columns:1fr}
-  .phases-grid{grid-template-columns:1fr 1fr}
-  .news-grid{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
-  .portal-inner{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .staff-intro{grid-template-columns:1fr}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-}
-@media(max-width:580px){
-  .phases-grid{grid-template-columns:1fr}
-  .values{grid-template-columns:1fr}
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
-  .form-row{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .hero-stats{gap:20px}
-  .section-title{font-size:28px}
-}
+.footer-note{text-align:center;font-size:11px;color:var(--muted);padding:20px 0 32px}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="#home">
-      <div class="nav-emblem">HP</div>
-      <div class="nav-name">Haladu Primary School<span>Nquthu · KwaZulu-Natal</span></div>
-    </a>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#academics">Academics</a>
-      <a href="#news">News</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#staff">Staff</a>
-      <a href="#contact">Contact</a>
-      <a href="#portal" class="portal-btn">📋 Learner Portal</a>
+<header>
+  <div class="hdr">
+    <div class="hdr-logo">
+      <div class="hdr-emblem">HP</div>
+      <div class="hdr-name">Haladu Primary School<span>Learner Results Portal</span></div>
     </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+    <div class="hdr-right">
+      <span class="moana-badge">Powered by Moana Technologies</span>
+      <a href="index.html" class="back-btn">← Back to Website</a>
     </div>
   </div>
-</nav>
+</header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#home" onclick="closeMenu()">Home</a>
-  <a href="#about" onclick="closeMenu()">About Us</a>
-  <a href="#academics" onclick="closeMenu()">Academics</a>
-  <a href="#news" onclick="closeMenu()">News</a>
-  <a href="#gallery" onclick="closeMenu()">Gallery</a>
-  <a href="#staff" onclick="closeMenu()">Staff</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="#portal" onclick="closeMenu()">📋 Learner Portal</a>
+<!-- LOGIN -->
+<div id="loginPage">
+  <div class="login-box">
+    <div class="login-head">
+      <div class="login-icon">HP</div>
+      <h2>Haladu Primary School</h2>
+      <p>EMIS: 700210002 · Nquthu, KwaZulu-Natal</p>
+    </div>
+    <div class="login-body">
+      <div class="err" id="errMsg">Incorrect Learner ID or password. Please try again.</div>
+      <div class="field"><label>Learner ID</label><input type="text" id="lid" placeholder="e.g. HAL001" autocomplete="off"/></div>
+      <div class="field"><label>Password</label><input type="password" id="lpw" placeholder="Enter your password"/></div>
+      <button class="login-btn" id="loginBtn" onclick="doLogin()">
+        <span id="btnTxt">Sign In to View Results</span>
+        <div class="spin" id="spin"></div>
+      </button>
+      <p class="login-note">🔒 Your results are secured by Moana Technologies</p>
+    </div>
+  </div>
 </div>
 
-<!-- HOME / HERO -->
-<section id="home">
-  <div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-pattern"></div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge">Est. Nquthu · KwaZulu-Natal</div>
-        <h1>Haladu<br><span>Primary</span><br>School</h1>
-        <p class="hero-sub">Nurturing confident, capable, and compassionate learners who are proud of their community and prepared for the future.</p>
-        <div class="hero-stats">
-          <div class="stat"><div class="stat-num">R–7</div><div class="stat-lbl">Grades Offered</div></div>
-          <div class="stat"><div class="stat-num">KZN</div><div class="stat-lbl">Province</div></div>
-          <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Dedicated</div></div>
-        </div>
-        <div class="hero-btns">
-          <a href="#about" class="btn-primary">Discover Our School ↓</a>
-          <a href="#portal" class="btn-outline">Learner Portal →</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="photo-stack">
-          <div class="photo-main">
-            <img src="images/elections-1.jpg" alt="Student Elections at Haladu Primary"/>
-          </div>
-          <div class="photo-secondary">
-            <img src="images/farewell-1.jpg" alt="Grade 7 Farewell"/>
-          </div>
-          <div class="photo-accent">
-            <img src="images/graduation-1.jpg" alt="Graduation Day"/>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-      <div class="scroll-dot"></div>
-      scroll
-    </div>
+<!-- RESULTS -->
+<div id="resultsPage">
+  <div class="res-topbar">
+    <h2>📋 Learner Results</h2>
+    <button class="signout" onclick="doSignOut()">← Sign Out</button>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <div class="section-label">Who We Are</div>
-        <h2 class="section-title">A School Built on Pride, Purpose & Community</h2>
-        <p style="color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:20px">Haladu Primary School is a proud institution in Nquthu, KwaZulu-Natal, serving learners from Grade R through Grade 7. We believe that every child carries extraordinary potential, and our mission is to unlock it through dedicated teaching, a caring environment, and strong community partnerships.</p>
-        <p style="color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:24px">Our school is distinguished by its vibrant culture of participation — from student elections and choir performances to civic education and sport. We develop the whole child: academically, socially, and as a future citizen of South Africa.</p>
-        <div class="mission-box">
-          <h4>Our Mission</h4>
-          <p>To provide quality, inclusive education that empowers every learner to achieve their full potential and contribute meaningfully to their community and country.</p>
-        </div>
-        <div class="values">
-          <div class="val-card"><div class="val-icon">🎓</div><div><div class="val-title">Academic Excellence</div><div class="val-text">High standards across all phases and subjects</div></div></div>
-          <div class="val-card"><div class="val-icon">🤝</div><div><div class="val-title">Community</div><div class="val-text">Strong ties with parents and local community</div></div></div>
-          <div class="val-card"><div class="val-icon">🌟</div><div><div class="val-title">Leadership</div><div class="val-text">Building confident, capable young leaders</div></div></div>
-          <div class="val-card"><div class="val-icon">🇿🇦</div><div><div class="val-title">Citizenship</div><div class="val-text">Proud South African identity and values</div></div></div>
-        </div>
-      </div>
-      <div class="about-photos">
-        <div class="about-photo tall">
-          <img src="images/hall-1.jpg" alt="Learners in Assembly Hall"/>
-        </div>
-        <div class="about-photo">
-          <img src="images/classroom-1.jpg" alt="Classroom Learning"/>
-        </div>
-        <div class="about-photo">
-          <img src="images/graduation-1.jpg" alt="Grade R Graduation"/>
-        </div>
+  <div class="learner-card">
+    <div class="lav" id="resAv">?</div>
+    <div class="linfo">
+      <h3 id="resName">Learner</h3>
+      <p>Haladu Primary School · EMIS 700210002 · Nquthu, KwaZulu-Natal</p>
+      <div class="ltags">
+        <span class="ltag" id="resGrade"></span>
+        <span class="ltag" id="resID"></span>
+        <span class="ltag" id="resYear"></span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ACADEMICS -->
-<section id="academics">
-  <div class="container">
-    <div class="section-label">Learning at Haladu</div>
-    <h2 class="section-title">Curriculum & Phases</h2>
-    <p class="section-sub">We follow the South African National Curriculum Statement (CAPS) across three school phases, providing a structured and holistic learning experience for every learner.</p>
-    <div class="phases-grid">
-      <div class="phase-card">
-        <div class="phase-num">01</div>
-        <div class="phase-name">Foundation Phase</div>
-        <div class="phase-grades">Grade R — Grade 3</div>
-        <div class="phase-subjects">The critical early years. Learners develop foundational literacy and numeracy skills in a nurturing, play-based environment. Language, Life Skills, and Mathematics form the core.</div>
-      </div>
-      <div class="phase-card">
-        <div class="phase-num">02</div>
-        <div class="phase-name">Intermediate Phase</div>
-        <div class="phase-grades">Grade 4 — Grade 6</div>
-        <div class="phase-subjects">Learners engage with a broader curriculum including Natural Sciences, Social Sciences, Technology, Arts & Culture, and Economic & Management Sciences alongside core subjects.</div>
-      </div>
-      <div class="phase-card">
-        <div class="phase-num">03</div>
-        <div class="phase-name">Senior Phase</div>
-        <div class="phase-grades">Grade 7</div>
-        <div class="phase-subjects">The final primary phase prepares learners for high school. Focus deepens on Mathematics, Languages, Natural Sciences, Social Sciences, and Economic & Management Sciences.</div>
-      </div>
-    </div>
-    <div class="subjects-highlight">
-      <div>
-        <h3>Core Subjects</h3>
-        <p>All learners study across the full CAPS subject offering appropriate to their phase, with strong emphasis on home language, English, and Mathematics.</p>
-      </div>
-      <div class="subject-tags">
-        <span class="stag">Mathematics</span>
-        <span class="stag">IsiZulu HL</span>
-        <span class="stag">English FAL</span>
-        <span class="stag">Natural Sciences</span>
-        <span class="stag">Social Sciences</span>
-        <span class="stag">Life Skills</span>
-        <span class="stag">Technology</span>
-        <span class="stag">Arts & Culture</span>
-        <span class="stag">EMS</span>
-        <span class="stag">Life Orientation</span>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="sum-grid" id="sumGrid"></div>
 
-<!-- NEWS -->
-<section id="news">
-  <div class="container">
-    <div class="section-label">Latest Updates</div>
-    <h2 class="section-title">News & Announcements</h2>
-    <p class="section-sub">Stay up to date with events, achievements, and important notices from Haladu Primary School.</p>
-    <div class="news-grid">
-      <div class="news-featured">
-        <div class="news-feat-img">
-          <img src="images/elections-1.jpg" alt="Student Elections"/>
-        </div>
-        <div class="news-feat-body">
-          <div class="news-feat-date">📅 Term 2 · 2025</div>
-          <div class="news-feat-title">Student Representative Council Elections Held Successfully</div>
-          <div class="news-feat-text">Haladu Primary School hosted a vibrant and democratic SRC election process, with learners forming political parties, drafting manifestos, delivering speeches, and casting votes. The event, which saw the "Democratic Living Learners Party" among the contestants, modelled civic participation and democratic values for learners across all grades.</div>
-        </div>
-      </div>
-      <div class="news-list">
-        <div class="news-item">
-          <div class="news-item-tag">🎓 Milestone</div>
-          <div class="news-item-title">Grade 7 Farewell — Class of 2025 Celebrated</div>
-          <div class="news-item-date">End of Year · 2025</div>
-        </div>
-        <div class="news-item">
-          <div class="news-item-tag">👶 Foundation</div>
-          <div class="news-item-title">Grade R Graduation Ceremony — A Proud Moment for Families</div>
-          <div class="news-item-date">November · 2025</div>
-        </div>
-        <div class="news-item">
-          <div class="news-item-tag">🎤 Culture</div>
-          <div class="news-item-title">Choir & Cultural Performances at School Assembly</div>
-          <div class="news-item-date">Term 2 · 2025</div>
-        </div>
-        <div class="news-item">
-          <div class="news-item-tag">📋 Portal</div>
-          <div class="news-item-title">Term 1 & 2 Results Now Available on Learner Portal</div>
-          <div class="news-item-date">2025</div>
-        </div>
-      </div>
+  <div class="legend">
+    <h4>NSC Level of Achievement</h4>
+    <div class="legend-items">
+      <div class="leg"><div class="leg-dot" style="background:#1a237e">7</div>80–100% Outstanding</div>
+      <div class="leg"><div class="leg-dot" style="background:#1565c0">6</div>70–79% Meritorious</div>
+      <div class="leg"><div class="leg-dot" style="background:#2e7d32">5</div>60–69% Substantial</div>
+      <div class="leg"><div class="leg-dot" style="background:#f57f17">4</div>50–59% Adequate</div>
+      <div class="leg"><div class="leg-dot" style="background:#e65100">3</div>40–49% Moderate</div>
+      <div class="leg"><div class="leg-dot" style="background:#b71c1c">2</div>30–39% Elementary</div>
+      <div class="leg"><div class="leg-dot" style="background:#4a0000">1</div>0–29% Not Achieved</div>
     </div>
   </div>
-</section>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-    <div class="section-label">Photo Gallery</div>
-    <h2 class="section-title">Life at Haladu Primary</h2>
-    <p class="section-sub">A glimpse into our vibrant school community — from elections and graduation to classroom learning and choir performances.</p>
-    <div class="gallery-tabs">
-      <div class="gtab active">All</div>
-      <div class="gtab">Elections & Civic</div>
-      <div class="gtab">Graduations</div>
-      <div class="gtab">Classroom</div>
-      <div class="gtab">Events</div>
-    </div>
-    <div class="gallery-grid">
-      <div class="gphoto wide">
-        <img src="images/elections-1.jpg" alt="Student Elections"/>
-        <div class="caption">Student Elections — Civic Leadership</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/candidates-1.jpg" alt="Election Candidates"/>
-        <div class="caption">Election candidates ready</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/flag-1.jpg" alt="SA Flag"/>
-        <div class="caption">Celebrating South Africa 🇿🇦</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/choir-1.jpg" alt="Choir"/>
-        <div class="caption">School choir at assembly</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/graduation-1.jpg" alt="Grade R Graduation"/>
-        <div class="caption">Grade R Graduation 2025</div>
-      </div>
-      <div class="gphoto wide">
-        <img src="images/farewell-1.jpg" alt="Grade 7 Farewell"/>
-        <div class="caption">Grade 7 Farewell — a proud day for Haladu</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/learning-1.jpg" alt="Classroom Learning"/>
-        <div class="caption">Active learning in the classroom</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/assembly-1.jpg" alt="Assembly"/>
-        <div class="caption">School assembly — all grades</div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:20px;font-size:12px;color:var(--muted)">📸 Upload your actual photos to GitHub and replace the image placeholders — all your 19 photos will display here</p>
-  </div>
-</section>
+  <div class="term-tabs" id="termTabs"></div>
 
-<!-- STAFF -->
-<section id="staff">
-  <div class="container">
-    <div class="section-label">Our Educators</div>
-    <h2 class="section-title">Meet the Team</h2>
-    <p class="section-sub">Our dedicated educators are the heart of Haladu Primary School — committed professionals who inspire, guide, and support every learner every day.</p>
-    <div class="staff-intro">
-      <div class="staff-cards">
-        <div class="staff-card"><div class="staff-av">P</div><div class="staff-name">Principal</div><div class="staff-role">School Principal</div><div class="staff-phase">School Leadership</div></div>
-        <div class="staff-card"><div class="staff-av">N</div><div class="staff-name">Ms N. Dube</div><div class="staff-role">Mathematics</div><div class="staff-phase">Senior & Intermediate</div></div>
-        <div class="staff-card"><div class="staff-av">A</div><div class="staff-name">Mr A. Ntuli</div><div class="staff-role">English FAL</div><div class="staff-phase">Intermediate Phase</div></div>
-        <div class="staff-card"><div class="staff-av">P</div><div class="staff-name">Ms P. Mhlongo</div><div class="staff-role">IsiZulu HL</div><div class="staff-phase">All Phases</div></div>
-        <div class="staff-card"><div class="staff-av">B</div><div class="staff-name">Mr B. Mthethwa</div><div class="staff-role">Natural Sciences</div><div class="staff-phase">Intermediate Phase</div></div>
-        <div class="staff-card"><div class="staff-av">T</div><div class="staff-name">Ms T. Mbatha</div><div class="staff-role">Social Sciences</div><div class="staff-phase">Intermediate Phase</div></div>
-        <div class="staff-card"><div class="staff-av">K</div><div class="staff-name">Mr K. Mthethwa</div><div class="staff-role">Social Sciences</div><div class="staff-phase">Senior Phase</div></div>
-        <div class="staff-card"><div class="staff-av">S</div><div class="staff-name">Foundation Staff</div><div class="staff-role">Grade R – 3</div><div class="staff-phase">Foundation Phase</div></div>
-      </div>
-      <div class="staff-quote">
-        <blockquote>"At Haladu Primary School, we don't just teach subjects — we build futures. Every learner who walks through our gates is capable of greatness, and it is our privilege to help them find it."</blockquote>
-        <cite>— School Principal, Haladu Primary School</cite>
-      </div>
-    </div>
-  </div>
-</section>
+  <table class="res-table">
+    <thead><tr><th>Subject</th><th>Teacher</th><th>Mark (%)</th><th>Level</th><th>Achievement</th></tr></thead>
+    <tbody id="resBody"></tbody>
+  </table>
 
-<!-- PORTAL -->
-<section id="portal">
-  <div class="container">
-    <div class="portal-inner">
-      <div class="portal-text">
-        <div class="section-label" style="color:var(--gold)">Digital Services</div>
-        <h2>Haladu <span>Learner</span> Portal</h2>
-        <p>Learners and parents can securely access academic results, teacher comments, and personalised improvement recommendations online — anytime, anywhere.</p>
-        <div class="portal-features">
-          <div class="pf"><div class="pf-dot">📊</div><div class="pf-text">View term results across all subjects</div></div>
-          <div class="pf"><div class="pf-dot">💬</div><div class="pf-text">Read teacher comments and feedback</div></div>
-          <div class="pf"><div class="pf-dot">🎯</div><div class="pf-text">Get personalised improvement recommendations</div></div>
-          <div class="pf"><div class="pf-dot">🔒</div><div class="pf-text">Secured by Moana Technologies</div></div>
-        </div>
-      </div>
-      <div class="portal-card">
-        <h3>📋 Learner Sign In</h3>
-        <p>Enter your Learner ID and password to view your results</p>
-        <div class="portal-err" id="portalErr">Incorrect Learner ID or password. Please try again.</div>
-        <div class="portal-field"><label>Learner ID</label><input type="text" id="pid" placeholder="e.g. HAL001" autocomplete="off"/></div>
-        <div class="portal-field"><label>Password</label><input type="password" id="ppw" placeholder="Enter your password"/></div>
-        <button class="portal-login-btn" onclick="portalLogin()">Sign In to View Results</button>
-        <p class="portal-note">Your results are secured by Moana Technologies · EMIS 700210002</p>
-      </div>
-    </div>
+  <div class="comments-box">
+    <div class="box-title" id="commentsTitle">💬 Teacher Comments</div>
+    <div id="commentsBody"></div>
   </div>
-</section>
 
-<!-- RESULTS SECTION -->
-<section id="resultsSection">
-  <div class="container">
-    <div class="results-header">
-      <h2>📋 Learner Results</h2>
-      <button class="signout-btn" onclick="doSignOut()">← Sign Out</button>
-    </div>
-    <div class="learner-banner">
-      <div class="learner-av2" id="resAv">?</div>
-      <div>
-        <h3 id="resName2">Learner Name</h3>
-        <p id="resSchool2">Haladu Primary School</p>
-        <div class="ltags">
-          <span class="ltag" id="resGrade2"></span>
-          <span class="ltag" id="resID2"></span>
-          <span class="ltag" id="resYear2"></span>
-        </div>
-      </div>
-    </div>
-    <div class="sum-row" id="sumRow"></div>
-    <div class="term-row" id="termRow"></div>
-    <table class="res-table">
-      <thead><tr><th>Subject</th><th>Teacher</th><th>Mark (%)</th><th>Level</th><th>Achievement</th></tr></thead>
-      <tbody id="resBody2"></tbody>
-    </table>
-    <div class="comments-panel">
-      <h3 id="commentsTitle">💬 Teacher Comments</h3>
-      <div id="commentsBody2"></div>
-    </div>
-    <div class="rec-panel">
-      <h3>⭐ Personalised Improvement Recommendations</h3>
-      <div id="recBody2"></div>
-    </div>
+  <div class="rec-box">
+    <h3>⭐ Personalised Improvement Recommendations</h3>
+    <div id="recBody"></div>
   </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="section-label">Get In Touch</div>
-    <h2 class="section-title">Contact Us</h2>
-    <p class="section-sub">We welcome enquiries from parents, community members, and organisations. Reach out and we'll respond promptly.</p>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="cinfo-card"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Address</div><div class="cinfo-value">Nquthu, KwaZulu-Natal, South Africa</div></div></div>
-        <div class="cinfo-card"><div class="cinfo-icon">🏫</div><div><div class="cinfo-label">EMIS Number</div><div class="cinfo-value">700210002</div></div></div>
-        <div class="cinfo-card"><div class="cinfo-icon">📚</div><div><div class="cinfo-label">Grades Offered</div><div class="cinfo-value">Grade R through Grade 7</div></div></div>
-        <div class="cinfo-card"><div class="cinfo-icon">🌐</div><div><div class="cinfo-label">Learner Portal</div><div class="cinfo-value">Powered by Moana Technologies</div></div></div>
-        <div class="cinfo-card"><div class="cinfo-icon">⏰</div><div><div class="cinfo-label">School Hours</div><div class="cinfo-value">Monday – Friday · 7:30 AM – 2:00 PM</div></div></div>
-      </div>
-      <div class="contact-form">
-        <h3>Send Us a Message</h3>
-        <div class="form-row">
-          <div class="cf"><label>First Name</label><input type="text" placeholder="Your first name"/></div>
-          <div class="cf"><label>Surname</label><input type="text" placeholder="Your surname"/></div>
-        </div>
-        <div class="cf"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
-        <div class="cf"><label>Enquiry Type</label>
-          <select><option>General Enquiry</option><option>Admissions</option><option>Learner Results</option><option>Event Information</option><option>Partnership</option></select>
-        </div>
-        <div class="cf"><label>Message</label><textarea placeholder="Type your message here..."></textarea></div>
-        <button class="submit-btn" onclick="alert('Thank you for your message! The school will be in touch soon.')">Send Message →</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo" style="margin-bottom:12px;display:flex;align-items:center;gap:10px">
-          <div class="nav-emblem">HP</div>
-          <div class="nav-name" style="color:#fff;font-size:14px;font-weight:700">Haladu Primary School<span style="color:rgba(255,255,255,.4);font-size:10px;display:block">Nquthu · KwaZulu-Natal</span></div>
-        </div>
-        <p>A proudly KwaZulu-Natal school dedicated to quality education, strong values, and the holistic development of every learner in our community.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#academics">Academics</a>
-        <a href="#news">News</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#staff">Staff</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Learner Services</h4>
-        <a href="#portal">Learner Results Portal</a>
-        <a href="#portal">Term 1 Results</a>
-        <a href="#portal">Term 2 Results</a>
-        <a href="#news">School Calendar</a>
-        <a href="#contact">Admissions</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 Haladu Primary School · Nquthu, KwaZulu-Natal · EMIS 700210002</p>
-      <div class="moana-credit">Powered by Moana Technologies</div>
-    </div>
-  </div>
-</footer>
+  <div class="footer-note">Results secured by Moana Technologies · Haladu Primary School · EMIS 700210002</div>
+</div>
 
 <script>
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
-
-// ── Learner Data ──
 const STUDENTS=[
   {id:'HAL001',pw:'hal001',name:'Sifiso Mhlongo',grade:'Grade 5',year:'2025',terms:{
     'Term 1':{released:true,subjects:[
@@ -752,72 +252,73 @@ function getLevel(m){
 }
 function ini(n){return n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
 
-let curStudent=null,curTerm=null;
+let cur=null,curTerm=null;
 
-function portalLogin(){
-  const id=document.getElementById('pid').value.trim().toUpperCase();
-  const pw=document.getElementById('ppw').value;
-  const err=document.getElementById('portalErr');
+function doLogin(){
+  const id=document.getElementById('lid').value.trim().toUpperCase();
+  const pw=document.getElementById('lpw').value;
+  const err=document.getElementById('errMsg');
+  const btn=document.getElementById('loginBtn');
+  const txt=document.getElementById('btnTxt');
+  const sp=document.getElementById('spin');
   err.style.display='none';
   if(!id||!pw){err.textContent='Please enter your Learner ID and password.';err.style.display='block';return}
-  const st=STUDENTS.find(s=>s.id===id&&s.pw===pw.toLowerCase());
-  if(st){
-    curStudent=st;
-    document.getElementById('portal').style.display='none';
-    document.getElementById('resultsSection').style.display='block';
-    renderResults();
-    document.getElementById('resultsSection').scrollIntoView({behavior:'smooth'});
-  } else {
-    err.textContent='Incorrect Learner ID or password. Please try again.';
-    err.style.display='block';
-  }
+  btn.disabled=true;txt.style.display='none';sp.style.display='block';
+  setTimeout(()=>{
+    btn.disabled=false;txt.style.display='block';sp.style.display='none';
+    const st=STUDENTS.find(s=>s.id===id&&s.pw===pw.toLowerCase());
+    if(st){cur=st;showResults();}
+    else{err.textContent='Incorrect Learner ID or password. Please try again.';err.style.display='block';}
+  },700);
 }
 
-function renderResults(){
-  document.getElementById('resAv').textContent=ini(curStudent.name);
-  document.getElementById('resName2').textContent=curStudent.name;
-  document.getElementById('resSchool2').textContent='Haladu Primary School · EMIS 700210002';
-  document.getElementById('resGrade2').textContent=curStudent.grade;
-  document.getElementById('resID2').textContent='ID: '+curStudent.id;
-  document.getElementById('resYear2').textContent=curStudent.year;
-  const terms=Object.keys(curStudent.terms);
-  curTerm=terms.find(t=>curStudent.terms[t].released)||terms[0];
-  document.getElementById('termRow').innerHTML=terms.map(t=>{
-    const rel=curStudent.terms[t].released;
-    return`<div class="ttab${t===curTerm?' active':''}${rel?'':' locked'}" onclick="${rel?`switchTerm2('${t}',this)`:'alert(\"Results for this term have not been released yet.\")'}">
+function showResults(){
+  document.getElementById('loginPage').style.display='none';
+  document.getElementById('resultsPage').style.display='block';
+  document.getElementById('resAv').textContent=ini(cur.name);
+  document.getElementById('resName').textContent=cur.name;
+  document.getElementById('resGrade').textContent=cur.grade;
+  document.getElementById('resID').textContent='ID: '+cur.id;
+  document.getElementById('resYear').textContent=cur.year;
+  const terms=Object.keys(cur.terms);
+  curTerm=terms.find(t=>cur.terms[t].released)||terms[0];
+  document.getElementById('termTabs').innerHTML=terms.map(t=>{
+    const rel=cur.terms[t].released;
+    return`<div class="ttab${t===curTerm?' active':''}${rel?'':' locked'}" onclick="${rel?`switchTerm('${t}',this)`:'alert(\"Results for this term have not been released yet.\")'}">
       ${t}${rel?'':'<span class="soon">Soon</span>'}
     </div>`;
   }).join('');
-  renderTerm2(curTerm);
+  renderTerm(curTerm);
+  window.scrollTo(0,0);
 }
 
-function switchTerm2(t,el){
+function switchTerm(t,el){
   document.querySelectorAll('.ttab').forEach(x=>x.classList.remove('active'));
   el.classList.add('active');
-  curTerm=t;renderTerm2(t);
+  curTerm=t;renderTerm(t);
 }
 
-function renderTerm2(term){
-  const subs=curStudent.terms[term].subjects;
+function renderTerm(term){
+  const subs=cur.terms[term].subjects;
+  document.getElementById('commentsTitle').textContent=`💬 Teacher Comments — ${term}`;
   if(!subs||!subs.length){
-    document.getElementById('sumRow').innerHTML='';
-    document.getElementById('resBody2').innerHTML=`<tr><td colspan="5" style="text-align:center;padding:28px;color:var(--muted);font-size:13px">Results for ${term} have not been released yet.</td></tr>`;
-    document.getElementById('commentsBody2').innerHTML='<p style="color:var(--muted);font-size:13px">Comments will appear once results are released.</p>';
-    document.getElementById('recBody2').innerHTML='<div class="rec-item2"><div class="rec-dot2"></div><div class="rec-text2">Recommendations will appear once results are released.</div></div>';
+    document.getElementById('sumGrid').innerHTML='';
+    document.getElementById('resBody').innerHTML=`<tr><td colspan="5" style="text-align:center;padding:28px;color:var(--muted);font-size:13px">Results for ${term} have not been released yet.</td></tr>`;
+    document.getElementById('commentsBody').innerHTML='<p style="color:var(--muted);font-size:13px;padding:8px 0">Comments will appear once results are released.</p>';
+    document.getElementById('recBody').innerHTML='<div class="rec-item"><div class="rec-dot"></div><div class="rec-text">Recommendations will appear once results are released.</div></div>';
     return;
   }
   const avg=Math.round(subs.reduce((a,s)=>a+s.mark,0)/subs.length);
   const hi=subs.reduce((a,s)=>s.mark>a.mark?s:a);
   const lo=subs.filter(s=>!s.lo).reduce((a,s)=>s.mark<a.mark?s:a);
   const avgLvl=getLevel(avg);
-  document.getElementById('commentsTitle').textContent=`💬 Teacher Comments — ${term}`;
-  document.getElementById('sumRow').innerHTML=`
-    <div class="sum-box"><div class="val">${avg}%</div><div class="lbl">Average</div></div>
-    <div class="sum-box"><div class="val">Level ${avgLvl.num}</div><div class="lbl">${avgLvl.label}</div></div>
-    <div class="sum-box"><div class="val">${subs.filter(s=>s.mark>=50).length}/${subs.length}</div><div class="lbl">Passed</div></div>
-    <div class="sum-box"><div class="val">${hi.mark}%</div><div class="lbl">Best: ${hi.name.split(' ')[0]}</div></div>
-    <div class="sum-box"><div class="val">${lo.mark}%</div><div class="lbl">Needs Work</div></div>`;
-  document.getElementById('resBody2').innerHTML=
+  document.getElementById('sumGrid').innerHTML=`
+    <div class="sum-card"><div class="sum-val">${avg}%</div><div class="sum-lbl">Average</div></div>
+    <div class="sum-card"><div class="sum-val">Level ${avgLvl.num}</div><div class="sum-lbl">${avgLvl.label}</div></div>
+    <div class="sum-card"><div class="sum-val">${subs.filter(s=>s.mark>=50).length}/${subs.length}</div><div class="sum-lbl">Passed</div></div>
+    <div class="sum-card"><div class="sum-val">${hi.mark}%</div><div class="sum-lbl">Best: ${hi.name.split(' ')[0]}</div></div>
+    <div class="sum-card"><div class="sum-val">${lo.mark}%</div><div class="sum-lbl">Needs Work</div></div>`;
+  document.getElementById('resBody').innerHTML=
     subs.map(s=>{const l=getLevel(s.mark);return`<tr>
       <td><strong>${s.name}</strong>${s.lo?'<span class="lo-tag">LO</span>':''}</td>
       <td style="color:var(--muted);font-size:12px">${s.teacher}</td>
@@ -825,39 +326,44 @@ function renderTerm2(term){
       <td><span class="badge ${l.cls}">Level ${l.num}</span></td>
       <td style="font-size:11px;font-weight:600;color:#444">${l.label}</td>
     </tr>`}).join('')+
-    `<tr class="avg-r"><td colspan="2"><strong>Overall Average</strong></td>
+    `<tr class="avg-row"><td colspan="2"><strong>Overall Average</strong></td>
     <td><strong>${avg}%</strong></td>
     <td><span class="badge ${avgLvl.cls}">Level ${avgLvl.num}</span></td>
     <td style="font-size:11px;font-weight:600;color:#444">${avgLvl.label}</td></tr>`;
-  document.getElementById('commentsBody2').innerHTML=subs.map(s=>`
+  document.getElementById('commentsBody').innerHTML=subs.map(s=>`
     <div class="c-row">
       <div class="c-subj">${s.name}<div class="c-teacher">${s.teacher}</div></div>
       <div class="c-text">${s.comment}</div>
     </div>`).join('');
   const recs=subs.filter(s=>!s.lo&&s.mark<60).sort((a,b)=>a.mark-b.mark);
-  const showRecs=recs.length?recs:subs.filter(s=>!s.lo).sort((a,b)=>b.mark-a.mark).slice(0,3);
-  document.getElementById('recBody2').innerHTML=showRecs.map(s=>{const l=getLevel(s.mark);return`
-    <div class="rec-item2"><div class="rec-dot2"></div>
-    <div class="rec-text2"><span class="rec-subj2">${s.name} — Level ${l.num} (${s.mark}%):</span> ${s.rec}</div>
+  const show=recs.length?recs:subs.filter(s=>!s.lo).sort((a,b)=>b.mark-a.mark).slice(0,3);
+  document.getElementById('recBody').innerHTML=show.map(s=>{const l=getLevel(s.mark);return`
+    <div class="rec-item"><div class="rec-dot"></div>
+    <div class="rec-text"><span class="rec-subj">${s.name} — Level ${l.num} (${s.mark}%):</span> ${s.rec}</div>
     </div>`}).join('');
 }
 
 function doSignOut(){
-  curStudent=null;curTerm=null;
-  document.getElementById('pid').value='';
-  document.getElementById('ppw').value='';
-  document.getElementById('portalErr').style.display='none';
-  document.getElementById('resultsSection').style.display='none';
-  document.getElementById('portal').style.display='block';
-  document.getElementById('portal').scrollIntoView({behavior:'smooth'});
+  cur=null;curTerm=null;
+  document.getElementById('lid').value='';
+  document.getElementById('lpw').value='';
+  document.getElementById('errMsg').style.display='none';
+  document.getElementById('resultsPage').style.display='none';
+  document.getElementById('loginPage').style.display='flex';
+  window.scrollTo(0,0);
 }
 
-// Gallery tabs (visual only)
-document.querySelectorAll('.gtab').forEach(t=>{
-  t.addEventListener('click',function(){
-    document.querySelectorAll('.gtab').forEach(x=>x.classList.remove('active'));
-    this.classList.add('active');
-  });
+document.addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+
+// Auto-login if ID and password passed via URL
+window.addEventListener('load',()=>{
+  const params=new URLSearchParams(window.location.search);
+  const id=params.get('id');
+  const pw=params.get('pw');
+  if(id&&pw){
+    const st=STUDENTS.find(s=>s.id===id.toUpperCase()&&s.pw===pw.toLowerCase());
+    if(st){cur=st;showResults();}
+  }
 });
 </script>
 </body>
