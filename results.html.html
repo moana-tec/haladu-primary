@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learner Results — Haladu Primary School</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1a2744;--navy2:#0f1a32;
+  --gold:#f5c800;--gold2:#ffd700;--gold3:#c9a800;
+  --light:#f8f6f0;--white:#fff;--muted:#666;--border:#e0ddd5;
+}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);min-height:100vh}
+
+/* HEADER */
+header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
+.hdr{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
+.hdr-logo{display:flex;align-items:center;gap:12px}
+.hdr-emblem{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--navy)}
+.hdr-name{color:#fff;font-size:14px;font-weight:700;line-height:1.2}
+.hdr-name span{color:rgba(255,255,255,.45);font-size:10px;font-weight:400;display:block}
+.hdr-right{display:flex;align-items:center;gap:12px}
+.moana-badge{color:var(--gold);font-size:11px;font-style:italic}
+.back-btn{background:none;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:7px 16px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;text-decoration:none;transition:.2s}
+.back-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* LOGIN PAGE */
+#loginPage{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 62px);padding:24px}
+.login-box{background:#fff;border-radius:20px;border:1.5px solid var(--border);overflow:hidden;width:100%;max-width:420px;box-shadow:0 8px 40px rgba(0,0,0,.1)}
+.login-head{background:var(--navy);padding:32px 28px;text-align:center;border-bottom:4px solid var(--gold)}
+.login-icon{width:68px;height:68px;background:rgba(245,200,0,.15);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:var(--gold);margin:0 auto 14px}
+.login-head h2{color:#fff;font-size:18px;font-weight:700;margin-bottom:4px}
+.login-head p{color:rgba(255,255,255,.45);font-size:11px}
+.login-body{padding:28px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px}
+.field input{width:100%;padding:13px 14px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;outline:none;transition:.2s;background:#fafafa}
+.field input:focus{border-color:var(--gold);background:#fff}
+.login-btn{width:100%;padding:14px;background:var(--navy);color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+.login-btn:hover{background:var(--navy2)}
+.err{background:#fff0f0;border:1px solid #f5c6cb;color:#c0392b;padding:10px 14px;border-radius:8px;font-size:12px;margin-bottom:16px;display:none;text-align:center}
+.login-note{text-align:center;font-size:10px;color:var(--muted);margin-top:14px}
+.spin{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* RESULTS PAGE */
+#resultsPage{display:none;padding:32px 24px;max-width:1000px;margin:0 auto}
+.res-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.res-topbar h2{font-size:20px;font-weight:800;color:var(--navy)}
+.signout{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600}
+.signout:hover{border-color:var(--navy);color:var(--navy)}
+
+.learner-card{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px;border-left:5px solid var(--gold)}
+.lav{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;font-weight:900;flex-shrink:0}
+.linfo h3{color:#fff;font-size:18px;font-weight:700}
+.linfo p{color:rgba(255,255,255,.5);font-size:12px;margin-top:2px}
+.ltags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.ltag{background:rgba(245,200,0,.15);border:1px solid rgba(245,200,0,.3);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:600}
+
+.sum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:18px}
+.sum-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center}
+.sum-val{font-size:22px;font-weight:800;color:var(--navy)}
+.sum-lbl{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.4px}
+
+/* Level legend */
+.legend{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:18px}
+.legend h4{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.legend-items{display:flex;flex-wrap:wrap;gap:6px}
+.leg{display:flex;align-items:center;gap:5px;font-size:10px;color:#444}
+.leg-dot{width:28px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700}
+
+.term-tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.ttab{padding:9px 22px;border-radius:22px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted);transition:.15s}
+.ttab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ttab.locked{opacity:.4;cursor:not-allowed}
+.ttab .soon{font-size:9px;background:var(--gold);color:var(--navy);padding:2px 5px;border-radius:8px;margin-left:4px;font-weight:700}
+
+.res-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:18px}
+.res-table thead tr{background:var(--navy)}
+.res-table thead th{color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.3px}
+.res-table thead th:nth-child(3),.res-table thead th:nth-child(4),.res-table thead th:nth-child(5){text-align:center}
+.res-table tbody tr{border-bottom:1px solid var(--border)}
+.res-table tbody tr:last-child{border-bottom:none}
+.res-table tbody td{padding:12px 16px;font-size:13px;vertical-align:middle}
+.res-table tbody td:nth-child(3),.res-table tbody td:nth-child(4),.res-table tbody td:nth-child(5){text-align:center}
+.avg-row{background:var(--light)}
+.avg-row td{font-weight:700;color:var(--navy)}
+.lo-tag{background:#fffde7;color:#795548;border:1px solid #ffe082;font-size:9px;padding:2px 6px;border-radius:6px;margin-left:5px;font-weight:700}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:700}
+.b7{background:#1a237e;color:#fff}.b6{background:#1565c0;color:#fff}
+.b5{background:#2e7d32;color:#fff}.b4{background:#f57f17;color:#fff}
+.b3{background:#e65100;color:#fff}.b2{background:#b71c1c;color:#fff}
+.b1{background:#4a0000;color:#fff}
+
+.comments-box{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:22px;margin-bottom:18px}
+.box-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.c-row{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+.c-row:last-child{border-bottom:none;padding-bottom:0}
+.c-subj{min-width:140px;font-size:12px;font-weight:700;color:var(--navy);padding-top:2px}
+.c-teacher{font-size:10px;color:var(--muted);margin-top:2px}
+.c-text{font-size:13px;color:#333;line-height:1.6;flex:1}
+
+.rec-box{background:var(--navy);border-radius:14px;padding:22px;border:2px solid var(--gold);margin-bottom:18px}
+.rec-box h3{color:var(--gold);font-size:13px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.6px}
+.rec-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
+.rec-item:last-child{margin-bottom:0}
+.rec-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;margin-top:5px;flex-shrink:0}
+.rec-text{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}
+.rec-subj{color:var(--gold);font-weight:700}
+
+.footer-note{text-align:center;font-size:11px;color:var(--muted);padding:20px 0 32px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="hdr-logo">
+      <div class="hdr-emblem">HP</div>
+      <div class="hdr-name">Haladu Primary School<span>Learner Results Portal</span></div>
+    </div>
+    <div class="hdr-right">
+      <span class="moana-badge">Powered by Moana Technologies</span>
+      <a href="index.html" class="back-btn">← Back to Website</a>
+    </div>
+  </div>
+</header>
+
+<!-- LOGIN -->
+<div id="loginPage">
+  <div class="login-box">
+    <div class="login-head">
+      <div class="login-icon">HP</div>
+      <h2>Haladu Primary School</h2>
+      <p>EMIS: 700210002 · Nquthu, KwaZulu-Natal</p>
+    </div>
+    <div class="login-body">
+      <div class="err" id="errMsg">Incorrect Learner ID or password. Please try again.</div>
+      <div class="field"><label>Learner ID</label><input type="text" id="lid" placeholder="e.g. HAL001" autocomplete="off"/></div>
+      <div class="field"><label>Password</label><input type="password" id="lpw" placeholder="Enter your password"/></div>
+      <button class="login-btn" id="loginBtn" onclick="doLogin()">
+        <span id="btnTxt">Sign In to View Results</span>
+        <div class="spin" id="spin"></div>
+      </button>
+      <p class="login-note">🔒 Your results are secured by Moana Technologies</p>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="resultsPage">
+  <div class="res-topbar">
+    <h2>📋 Learner Results</h2>
+    <button class="signout" onclick="doSignOut()">← Sign Out</button>
+  </div>
+
+  <div class="learner-card">
+    <div class="lav" id="resAv">?</div>
+    <div class="linfo">
+      <h3 id="resName">Learner</h3>
+      <p>Haladu Primary School · EMIS 700210002 · Nquthu, KwaZulu-Natal</p>
+      <div class="ltags">
+        <span class="ltag" id="resGrade"></span>
+        <span class="ltag" id="resID"></span>
+        <span class="ltag" id="resYear"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sum-grid" id="sumGrid"></div>
+
+  <div class="legend">
+    <h4>NSC Level of Achievement</h4>
+    <div class="legend-items">
+      <div class="leg"><div class="leg-dot" style="background:#1a237e">7</div>80–100% Outstanding</div>
+      <div class="leg"><div class="leg-dot" style="background:#1565c0">6</div>70–79% Meritorious</div>
+      <div class="leg"><div class="leg-dot" style="background:#2e7d32">5</div>60–69% Substantial</div>
+      <div class="leg"><div class="leg-dot" style="background:#f57f17">4</div>50–59% Adequate</div>
+      <div class="leg"><div class="leg-dot" style="background:#e65100">3</div>40–49% Moderate</div>
+      <div class="leg"><div class="leg-dot" style="background:#b71c1c">2</div>30–39% Elementary</div>
+      <div class="leg"><div class="leg-dot" style="background:#4a0000">1</div>0–29% Not Achieved</div>
+    </div>
+  </div>
+
+  <div class="term-tabs" id="termTabs"></div>
+
+  <table class="res-table">
+    <thead><tr><th>Subject</th><th>Teacher</th><th>Mark (%)</th><th>Level</th><th>Achievement</th></tr></thead>
+    <tbody id="resBody"></tbody>
+  </table>
+
+  <div class="comments-box">
+    <div class="box-title" id="commentsTitle">💬 Teacher Comments</div>
+    <div id="commentsBody"></div>
+  </div>
+
+  <div class="rec-box">
+    <h3>⭐ Personalised Improvement Recommendations</h3>
+    <div id="recBody"></div>
+  </div>
+
+  <div class="footer-note">Results secured by Moana Technologies · Haladu Primary School · EMIS 700210002</div>
+</div>
+
+<script>
+const STUDENTS=[
+  {id:'HAL001',pw:'hal001',name:'Sifiso Mhlongo',grade:'Grade 5',year:'2025',terms:{
+    'Term 1':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:70,comment:'Good number sense. Long division needs more practice to build speed.',rec:'Practise 10 long division problems daily. Use the Moana maths worksheet pack.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:63,comment:'Reading fluency is improving. Writing sentences needs more confidence.',rec:'Write 3 sentences daily about your day — this builds writing confidence quickly.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:85,comment:'Excellent home language performance. Stories are creative and well-told.',rec:'Keep writing short stories. Try reading a Zulu storybook each week.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:68,comment:'Curious learner who asks great questions. Written answers need more detail.',rec:'Use the Moana science diagrams to help structure written answers.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:72,comment:'Good map work. History answers need to include more dates and facts.',rec:'Make a history timeline for each chapter — stick it on your wall at home.'},
+    ]},
+    'Term 2':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:75,comment:'Division speed has improved a lot. Fractions are the next challenge.',rec:'Focus on equivalent fractions using the Moana fraction worksheets.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:67,comment:'Sentence construction is much better. Paragraph writing is developing.',rec:'Write one full paragraph per day — describe a place, person or event.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:88,comment:'Outstanding — consistently the strongest IsiZulu learner in the class.',rec:'Challenge yourself with longer written tasks — you are ready for it.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:72,comment:'Written answers are more detailed now. Experiments are well-observed.',rec:'Always link your observation to the science concept being taught.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:76,comment:'History answers now include dates and facts. Map interpretation is great.',rec:'Continue building your history timeline — add Term 2 content to it now.'},
+    ]},
+    'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
+  }},
+  {id:'HAL002',pw:'hal002',name:'Phumzile Zungu',grade:'Grade 6',year:'2025',terms:{
+    'Term 1':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:66,comment:'Multiplication tables are solid. Percentages and ratios need more attention.',rec:'Use the Moana percentage game in the e-library — practise 15 min per day.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:71,comment:'Good reader. Written expression is improving well this term.',rec:'Read one chapter of an English book per day and write a 3-sentence summary.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:78,comment:'Strong oral participation. Written work is neat and shows good effort.',rec:'Work on essay structure — introduction, body and conclusion must be clear.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:61,comment:'Practical work is good. Theory responses need more scientific vocabulary.',rec:'Learn 5 new science words per week using the Moana science glossary.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:74,comment:'Good understanding of geography concepts. History needs more revision.',rec:'Create flashcards for all history key terms — test yourself before each assessment.'},
+    ]},
+    'Term 2':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:71,comment:'Percentages improving. Ratio problems are now approached with confidence.',rec:'Move on to proportion problems — the Moana workbook has a full section.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:75,comment:'Written work shows real improvement. Chapter summaries are well-structured.',rec:'Start writing 5-sentence summaries — this prepares you for Grade 7 essays.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:82,comment:'Essay structure has improved markedly. Oral presentation was very confident.',rec:'Challenge yourself — write a short Zulu opinion piece on a topic you care about.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:66,comment:'Scientific vocabulary is growing. Continue linking words to concepts.',rec:'Draw and label diagrams from memory — this reinforces both vocab and concepts.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:79,comment:'Flashcard method is clearly working — notable improvement in history facts.',rec:'Now focus on explaining causes and effects — not just facts but reasons.'},
+    ]},
+    'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
+  }},
+];
+
+function getLevel(m){
+  if(m>=80)return{num:7,label:'Outstanding Achievement',cls:'b7'};
+  if(m>=70)return{num:6,label:'Meritorious Achievement',cls:'b6'};
+  if(m>=60)return{num:5,label:'Substantial Achievement',cls:'b5'};
+  if(m>=50)return{num:4,label:'Adequate Achievement',cls:'b4'};
+  if(m>=40)return{num:3,label:'Moderate Achievement',cls:'b3'};
+  if(m>=30)return{num:2,label:'Elementary Achievement',cls:'b2'};
+  return{num:1,label:'Not Achieved',cls:'b1'};
+}
+function ini(n){return n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
+
+let cur=null,curTerm=null;
+
+function doLogin(){
+  const id=document.getElementById('lid').value.trim().toUpperCase();
+  const pw=document.getElementById('lpw').value;
+  const err=document.getElementById('errMsg');
+  const btn=document.getElementById('loginBtn');
+  const txt=document.getElementById('btnTxt');
+  const sp=document.getElementById('spin');
+  err.style.display='none';
+  if(!id||!pw){err.textContent='Please enter your Learner ID and password.';err.style.display='block';return}
+  btn.disabled=true;txt.style.display='none';sp.style.display='block';
+  setTimeout(()=>{
+    btn.disabled=false;txt.style.display='block';sp.style.display='none';
+    const st=STUDENTS.find(s=>s.id===id&&s.pw===pw.toLowerCase());
+    if(st){cur=st;showResults();}
+    else{err.textContent='Incorrect Learner ID or password. Please try again.';err.style.display='block';}
+  },700);
+}
+
+function showResults(){
+  document.getElementById('loginPage').style.display='none';
+  document.getElementById('resultsPage').style.display='block';
+  document.getElementById('resAv').textContent=ini(cur.name);
+  document.getElementById('resName').textContent=cur.name;
+  document.getElementById('resGrade').textContent=cur.grade;
+  document.getElementById('resID').textContent='ID: '+cur.id;
+  document.getElementById('resYear').textContent=cur.year;
+  const terms=Object.keys(cur.terms);
+  curTerm=terms.find(t=>cur.terms[t].released)||terms[0];
+  document.getElementById('termTabs').innerHTML=terms.map(t=>{
+    const rel=cur.terms[t].released;
+    return`<div class="ttab${t===curTerm?' active':''}${rel?'':' locked'}" onclick="${rel?`switchTerm('${t}',this)`:'alert(\"Results for this term have not been released yet.\")'}">
+      ${t}${rel?'':'<span class="soon">Soon</span>'}
+    </div>`;
+  }).join('');
+  renderTerm(curTerm);
+  window.scrollTo(0,0);
+}
+
+function switchTerm(t,el){
+  document.querySelectorAll('.ttab').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  curTerm=t;renderTerm(t);
+}
+
+function renderTerm(term){
+  const subs=cur.terms[term].subjects;
+  document.getElementById('commentsTitle').textContent=`💬 Teacher Comments — ${term}`;
+  if(!subs||!subs.length){
+    document.getElementById('sumGrid').innerHTML='';
+    document.getElementById('resBody').innerHTML=`<tr><td colspan="5" style="text-align:center;padding:28px;color:var(--muted);font-size:13px">Results for ${term} have not been released yet.</td></tr>`;
+    document.getElementById('commentsBody').innerHTML='<p style="color:var(--muted);font-size:13px;padding:8px 0">Comments will appear once results are released.</p>';
+    document.getElementById('recBody').innerHTML='<div class="rec-item"><div class="rec-dot"></div><div class="rec-text">Recommendations will appear once results are released.</div></div>';
+    return;
+  }
+  const avg=Math.round(subs.reduce((a,s)=>a+s.mark,0)/subs.length);
+  const hi=subs.reduce((a,s)=>s.mark>a.mark?s:a);
+  const lo=subs.filter(s=>!s.lo).reduce((a,s)=>s.mark<a.mark?s:a);
+  const avgLvl=getLevel(avg);
+  document.getElementById('sumGrid').innerHTML=`
+    <div class="sum-card"><div class="sum-val">${avg}%</div><div class="sum-lbl">Average</div></div>
+    <div class="sum-card"><div class="sum-val">Level ${avgLvl.num}</div><div class="sum-lbl">${avgLvl.label}</div></div>
+    <div class="sum-card"><div class="sum-val">${subs.filter(s=>s.mark>=50).length}/${subs.length}</div><div class="sum-lbl">Passed</div></div>
+    <div class="sum-card"><div class="sum-val">${hi.mark}%</div><div class="sum-lbl">Best: ${hi.name.split(' ')[0]}</div></div>
+    <div class="sum-card"><div class="sum-val">${lo.mark}%</div><div class="sum-lbl">Needs Work</div></div>`;
+  document.getElementById('resBody').innerHTML=
+    subs.map(s=>{const l=getLevel(s.mark);return`<tr>
+      <td><strong>${s.name}</strong>${s.lo?'<span class="lo-tag">LO</span>':''}</td>
+      <td style="color:var(--muted);font-size:12px">${s.teacher}</td>
+      <td><strong>${s.mark}%</strong></td>
+      <td><span class="badge ${l.cls}">Level ${l.num}</span></td>
+      <td style="font-size:11px;font-weight:600;color:#444">${l.label}</td>
+    </tr>`}).join('')+
+    `<tr class="avg-row"><td colspan="2"><strong>Overall Average</strong></td>
+    <td><strong>${avg}%</strong></td>
+    <td><span class="badge ${avgLvl.cls}">Level ${avgLvl.num}</span></td>
+    <td style="font-size:11px;font-weight:600;color:#444">${avgLvl.label}</td></tr>`;
+  document.getElementById('commentsBody').innerHTML=subs.map(s=>`
+    <div class="c-row">
+      <div class="c-subj">${s.name}<div class="c-teacher">${s.teacher}</div></div>
+      <div class="c-text">${s.comment}</div>
+    </div>`).join('');
+  const recs=subs.filter(s=>!s.lo&&s.mark<60).sort((a,b)=>a.mark-b.mark);
+  const show=recs.length?recs:subs.filter(s=>!s.lo).sort((a,b)=>b.mark-a.mark).slice(0,3);
+  document.getElementById('recBody').innerHTML=show.map(s=>{const l=getLevel(s.mark);return`
+    <div class="rec-item"><div class="rec-dot"></div>
+    <div class="rec-text"><span class="rec-subj">${s.name} — Level ${l.num} (${s.mark}%):</span> ${s.rec}</div>
+    </div>`}).join('');
+}
+
+function doSignOut(){
+  cur=null;curTerm=null;
+  document.getElementById('lid').value='';
+  document.getElementById('lpw').value='';
+  document.getElementById('errMsg').style.display='none';
+  document.getElementById('resultsPage').style.display='none';
+  document.getElementById('loginPage').style.display='flex';
+  window.scrollTo(0,0);
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+
+// Auto-login if ID and password passed via URL
+window.addEventListener('load',()=>{
+  const params=new URLSearchParams(window.location.search);
+  const id=params.get('id');
+  const pw=params.get('pw');
+  if(id&&pw){
+    const st=STUDENTS.find(s=>s.id===id.toUpperCase()&&s.pw===pw.toLowerCase());
+    if(st){cur=st;showResults();}
+  }
+});
+</script>
+</body>
+</html>
