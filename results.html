@@ -12,8 +12,6 @@
   --light:#f8f6f0;--white:#fff;--muted:#666;--border:#e0ddd5;
 }
 body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);min-height:100vh}
-
-/* HEADER */
 header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 .hdr{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
 .hdr-logo{display:flex;align-items:center;gap:12px}
@@ -24,8 +22,6 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 .moana-badge{color:var(--gold);font-size:11px;font-style:italic}
 .back-btn{background:none;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);padding:7px 16px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;text-decoration:none;transition:.2s}
 .back-btn:hover{border-color:var(--gold);color:var(--gold)}
-
-/* LOGIN PAGE */
 #loginPage{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 62px);padding:24px}
 .login-box{background:#fff;border-radius:20px;border:1.5px solid var(--border);overflow:hidden;width:100%;max-width:420px;box-shadow:0 8px 40px rgba(0,0,0,.1)}
 .login-head{background:var(--navy);padding:32px 28px;text-align:center;border-bottom:4px solid var(--gold)}
@@ -43,39 +39,31 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 .login-note{text-align:center;font-size:10px;color:var(--muted);margin-top:14px}
 .spin{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin:0 auto}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* RESULTS PAGE */
 #resultsPage{display:none;padding:32px 24px;max-width:1000px;margin:0 auto}
 .res-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
 .res-topbar h2{font-size:20px;font-weight:800;color:var(--navy)}
 .signout{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600}
 .signout:hover{border-color:var(--navy);color:var(--navy)}
-
 .learner-card{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px;border-left:5px solid var(--gold)}
 .lav{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;font-weight:900;flex-shrink:0}
 .linfo h3{color:#fff;font-size:18px;font-weight:700}
 .linfo p{color:rgba(255,255,255,.5);font-size:12px;margin-top:2px}
 .ltags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .ltag{background:rgba(245,200,0,.15);border:1px solid rgba(245,200,0,.3);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:600}
-
 .sum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:18px}
 .sum-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center}
 .sum-val{font-size:22px;font-weight:800;color:var(--navy)}
 .sum-lbl{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.4px}
-
-/* Level legend */
 .legend{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:18px}
 .legend h4{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
 .legend-items{display:flex;flex-wrap:wrap;gap:6px}
 .leg{display:flex;align-items:center;gap:5px;font-size:10px;color:#444}
 .leg-dot{width:28px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700}
-
 .term-tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
 .ttab{padding:9px 22px;border-radius:22px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted);transition:.15s}
 .ttab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 .ttab.locked{opacity:.4;cursor:not-allowed}
 .ttab .soon{font-size:9px;background:var(--gold);color:var(--navy);padding:2px 5px;border-radius:8px;margin-left:4px;font-weight:700}
-
 .res-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:18px}
 .res-table thead tr{background:var(--navy)}
 .res-table thead th{color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:700;letter-spacing:.3px}
@@ -92,7 +80,6 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 .b5{background:#2e7d32;color:#fff}.b4{background:#f57f17;color:#fff}
 .b3{background:#e65100;color:#fff}.b2{background:#b71c1c;color:#fff}
 .b1{background:#4a0000;color:#fff}
-
 .comments-box{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:22px;margin-bottom:18px}
 .box-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border)}
 .c-row{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
@@ -100,7 +87,6 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 .c-subj{min-width:140px;font-size:12px;font-weight:700;color:var(--navy);padding-top:2px}
 .c-teacher{font-size:10px;color:var(--muted);margin-top:2px}
 .c-text{font-size:13px;color:#333;line-height:1.6;flex:1}
-
 .rec-box{background:var(--navy);border-radius:14px;padding:22px;border:2px solid var(--gold);margin-bottom:18px}
 .rec-box h3{color:var(--gold);font-size:13px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.6px}
 .rec-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}
@@ -108,12 +94,10 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 .rec-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;margin-top:5px;flex-shrink:0}
 .rec-text{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}
 .rec-subj{color:var(--gold);font-weight:700}
-
 .footer-note{text-align:center;font-size:11px;color:var(--muted);padding:20px 0 32px}
 </style>
 </head>
 <body>
-
 <header>
   <div class="hdr">
     <div class="hdr-logo">
@@ -126,8 +110,6 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
     </div>
   </div>
 </header>
-
-<!-- LOGIN -->
 <div id="loginPage">
   <div class="login-box">
     <div class="login-head">
@@ -147,14 +129,11 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
     </div>
   </div>
 </div>
-
-<!-- RESULTS -->
 <div id="resultsPage">
   <div class="res-topbar">
     <h2>📋 Learner Results</h2>
     <button class="signout" onclick="doSignOut()">← Sign Out</button>
   </div>
-
   <div class="learner-card">
     <div class="lav" id="resAv">?</div>
     <div class="linfo">
@@ -167,9 +146,7 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
       </div>
     </div>
   </div>
-
   <div class="sum-grid" id="sumGrid"></div>
-
   <div class="legend">
     <h4>NSC Level of Achievement</h4>
     <div class="legend-items">
@@ -182,27 +159,21 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
       <div class="leg"><div class="leg-dot" style="background:#4a0000">1</div>0–29% Not Achieved</div>
     </div>
   </div>
-
   <div class="term-tabs" id="termTabs"></div>
-
   <table class="res-table">
     <thead><tr><th>Subject</th><th>Teacher</th><th>Mark (%)</th><th>Level</th><th>Achievement</th></tr></thead>
     <tbody id="resBody"></tbody>
   </table>
-
   <div class="comments-box">
     <div class="box-title" id="commentsTitle">💬 Teacher Comments</div>
     <div id="commentsBody"></div>
   </div>
-
   <div class="rec-box">
     <h3>⭐ Personalised Improvement Recommendations</h3>
     <div id="recBody"></div>
   </div>
-
   <div class="footer-note">Results secured by Moana Technologies · Haladu Primary School · EMIS 700210002</div>
 </div>
-
 <script>
 const STUDENTS=[
   {id:'HAL001',pw:'hal001',name:'Sifiso Mhlongo',grade:'Grade 5',year:'2025',terms:{
@@ -240,7 +211,6 @@ const STUDENTS=[
     'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
   }},
 ];
-
 function getLevel(m){
   if(m>=80)return{num:7,label:'Outstanding Achievement',cls:'b7'};
   if(m>=70)return{num:6,label:'Meritorious Achievement',cls:'b6'};
@@ -251,9 +221,7 @@ function getLevel(m){
   return{num:1,label:'Not Achieved',cls:'b1'};
 }
 function ini(n){return n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
-
 let cur=null,curTerm=null;
-
 function doLogin(){
   const id=document.getElementById('lid').value.trim().toUpperCase();
   const pw=document.getElementById('lpw').value;
@@ -271,7 +239,6 @@ function doLogin(){
     else{err.textContent='Incorrect Learner ID or password. Please try again.';err.style.display='block';}
   },700);
 }
-
 function showResults(){
   document.getElementById('loginPage').style.display='none';
   document.getElementById('resultsPage').style.display='block';
@@ -291,13 +258,11 @@ function showResults(){
   renderTerm(curTerm);
   window.scrollTo(0,0);
 }
-
 function switchTerm(t,el){
   document.querySelectorAll('.ttab').forEach(x=>x.classList.remove('active'));
   el.classList.add('active');
   curTerm=t;renderTerm(t);
 }
-
 function renderTerm(term){
   const subs=cur.terms[term].subjects;
   document.getElementById('commentsTitle').textContent=`💬 Teacher Comments — ${term}`;
@@ -342,7 +307,6 @@ function renderTerm(term){
     <div class="rec-text"><span class="rec-subj">${s.name} — Level ${l.num} (${s.mark}%):</span> ${s.rec}</div>
     </div>`}).join('');
 }
-
 function doSignOut(){
   cur=null;curTerm=null;
   document.getElementById('lid').value='';
@@ -352,10 +316,7 @@ function doSignOut(){
   document.getElementById('loginPage').style.display='flex';
   window.scrollTo(0,0);
 }
-
 document.addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
-
-// Auto-login if ID and password passed via URL
 window.addEventListener('load',()=>{
   const params=new URLSearchParams(window.location.search);
   const id=params.get('id');
