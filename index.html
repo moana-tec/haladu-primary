@@ -13,14 +13,10 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);color:#222;overflow-x:hidden}
-
-/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);border-bottom:3px solid var(--gold);box-shadow:0 2px 20px rgba(0,0,0,.3)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-emblem{display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;background:transparent;border:2px solid var(--gold);border-radius:8px;padding:5px 10px;line-height:1}
-.nav-emblem .logo-top{font-size:17px;font-weight:900;color:var(--gold);letter-spacing:-1px;line-height:1}
-.nav-emblem .logo-bot{font-size:6.5px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.8px;text-transform:uppercase;line-height:1;margin-top:3px}
+.nav-emblem{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center}.nav-emblem img{width:42px;height:42px;object-fit:contain}
 .nav-name{color:#fff;font-size:14px;font-weight:700;line-height:1.2}
 .nav-name span{color:var(--gold);font-size:10px;font-weight:400;display:block;letter-spacing:.5px}
 .nav-links{display:flex;gap:4px;align-items:center}
@@ -34,18 +30,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);borde
 .mobile-menu a{color:rgba(255,255,255,.85);text-decoration:none;font-size:14px;font-weight:600;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block}
 .mobile-menu a:last-child{border-bottom:none;color:var(--gold)}
 .mobile-menu.open{display:flex}
-
-/* ── HERO ── */
 #home{padding-top:62px}
 .hero{min-height:92vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden}
-.hero-photo{position:absolute;inset:0;background-image:url('images/assembly-1.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;z-index:0}
-.hero-bg{position:absolute;inset:0;background:
-  linear-gradient(to right, rgba(10,18,38,.92) 0%, rgba(10,18,38,.75) 50%, rgba(10,18,38,.5) 100%),
-  radial-gradient(ellipse at 20% 50%,rgba(200,168,75,.10) 0%,transparent 60%);
-  z-index:1}
-.hero-pattern{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px;z-index:1}
+.hero-bg{position:absolute;inset:0;background:url('images/Principal.jpg') center center/cover no-repeat;z-index:1}.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(15,26,50,.85) 0%,rgba(15,26,50,.6) 60%,rgba(15,26,50,.3) 100%)}
+.hero-pattern{position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);background-size:20px 20px;z-index:1}
 .hero-content{max-width:1100px;margin:0 auto;padding:60px 24px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-text{}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.4);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:24px}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
 .hero h1{font-size:52px;font-weight:900;color:#fff;line-height:1.05;margin-bottom:12px;letter-spacing:-1px}
@@ -71,16 +60,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);borde
 .hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.8px;text-transform:uppercase;cursor:pointer}
 .scroll-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:bounce 1.5s infinite}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-
-/* ── SECTIONS ── */
 section{padding:80px 0}
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
 .section-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold3);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px}
 .section-label::before{content:'';width:24px;height:2px;background:var(--gold)}
 .section-title{font-size:36px;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:16px}
 .section-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:580px;margin-bottom:48px}
-
-/* ── ABOUT ── */
 #about{background:#fff}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -97,8 +82,6 @@ section{padding:80px 0}
 .mission-box{background:var(--navy);border-radius:16px;padding:24px;margin-top:24px;border-left:4px solid var(--gold)}
 .mission-box h4{color:var(--gold);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
 .mission-box p{color:rgba(255,255,255,.8);font-size:14px;line-height:1.7}
-
-/* ── ACADEMICS ── */
 #academics{background:var(--light)}
 .phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
 .phase-card{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:24px;transition:all .2s;cursor:default}
@@ -112,8 +95,6 @@ section{padding:80px 0}
 .subjects-highlight p{color:rgba(255,255,255,.7);font-size:13px;line-height:1.6;flex:1;min-width:200px}
 .subject-tags{display:flex;flex-wrap:wrap;gap:8px;flex:2}
 .stag{background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.3);color:var(--gold2);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600}
-
-/* ── NEWS ── */
 #news{background:#fff}
 .news-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
 .news-featured{background:var(--navy);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
@@ -130,8 +111,6 @@ section{padding:80px 0}
 .news-item-tag{display:inline-block;background:rgba(26,39,68,.08);color:var(--navy);font-size:9px;font-weight:700;padding:3px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
 .news-item-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.4}
 .news-item-date{font-size:11px;color:var(--muted)}
-
-/* ── GALLERY ── */
 #gallery{background:var(--light)}
 .gallery-tabs{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
 .gtab{padding:9px 20px;border-radius:20px;border:1.5px solid var(--border);background:#fff;font-size:12px;font-weight:700;cursor:pointer;color:var(--muted);transition:all .15s}
@@ -144,8 +123,6 @@ section{padding:80px 0}
 .gphoto:hover .caption{opacity:1}
 .gphoto.wide{grid-column:span 2}
 .gphoto.wide img{height:200px}
-
-/* ── STAFF ── */
 #staff{background:#fff}
 .staff-intro{display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:center;margin-bottom:48px}
 .staff-quote{background:var(--navy);border-radius:16px;padding:28px;border-left:4px solid var(--gold)}
@@ -158,8 +135,6 @@ section{padding:80px 0}
 .staff-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px}
 .staff-role{font-size:11px;color:var(--muted)}
 .staff-phase{font-size:10px;color:var(--gold3);font-weight:600;margin-top:4px}
-
-/* ── PORTAL ── */
 #portal{background:var(--navy);padding:80px 0}
 .portal-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .portal-text h2{color:#fff;font-size:36px;font-weight:800;margin-bottom:16px;line-height:1.2}
@@ -181,8 +156,6 @@ section{padding:80px 0}
 .portal-login-btn:hover{background:var(--gold2)}
 .portal-note{text-align:center;font-size:10px;color:rgba(255,255,255,.3);margin-top:14px}
 .portal-err{background:rgba(192,57,43,.2);border:1px solid rgba(192,57,43,.4);color:#ff8a80;padding:10px 14px;border-radius:8px;font-size:12px;margin-bottom:14px;display:none;text-align:center}
-
-/* ── CONTACT ── */
 #contact{background:var(--light)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .contact-info{display:flex;flex-direction:column;gap:20px}
@@ -200,8 +173,6 @@ section{padding:80px 0}
 .cf textarea{resize:vertical;min-height:100px}
 .submit-btn{width:100%;padding:14px;background:var(--navy);color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;letter-spacing:.3px}
 .submit-btn:hover{background:var(--navy2)}
-
-/* ── FOOTER ── */
 footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 24px}
 .footer-inner{max-width:1100px;margin:0 auto;padding:0 24px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px}
@@ -209,11 +180,9 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
 .footer-col h4{color:var(--gold);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px}
 .footer-col a{display:block;color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;margin-bottom:8px;transition:.2s}
 .footer-col a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:12px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer-bottom p{color:rgba(255,255,255,.35);font-size:11px}
 .moana-credit{color:var(--gold);font-size:11px;font-weight:600}
-
-/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-content{grid-template-columns:1fr;gap:40px}
   .hero h1{font-size:36px}
@@ -242,11 +211,10 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#home">
-      <div class="nav-emblem"><div class="logo-top">H·P</div><div class="logo-bot">Haladu Primary</div></div>
+      <div class="nav-emblem"><img src="haladu-logo.svg" alt="Haladu Primary School Logo"/></div>
       <div class="nav-name">Haladu Primary School<span>Nquthu · KwaZulu-Natal</span></div>
     </a>
     <div class="nav-links">
@@ -276,10 +244,8 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
   <a href="#portal" onclick="closeMenu()">📋 Learner Portal</a>
 </div>
 
-<!-- HOME / HERO -->
 <section id="home">
   <div class="hero">
-    <div class="hero-photo"></div>
     <div class="hero-bg"></div>
     <div class="hero-pattern"></div>
     <div class="hero-content">
@@ -299,26 +265,18 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
       </div>
       <div class="hero-visual">
         <div class="photo-stack">
-          <div class="photo-main">
-            <img src="images/elections-1.jpg" alt="Student Elections at Haladu Primary"/>
-          </div>
-          <div class="photo-secondary">
-            <img src="images/farewell-1.jpg" alt="Grade 7 Farewell"/>
-          </div>
-          <div class="photo-accent">
-            <img src="images/graduation-1.jpg" alt="Graduation Day"/>
-          </div>
+          <div class="photo-main"><img src="images/elections-1.jpg" alt="Student Elections at Haladu Primary"/></div>
+          <div class="photo-secondary"><img src="images/farewell-1.jpg" alt="Grade 7 Farewell"/></div>
+          <div class="photo-accent"><img src="images/graduation-1.jpg" alt="Graduation Day"/></div>
         </div>
       </div>
     </div>
     <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-      <div class="scroll-dot"></div>
-      scroll
+      <div class="scroll-dot"></div>scroll
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
@@ -339,21 +297,14 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
         </div>
       </div>
       <div class="about-photos">
-        <div class="about-photo tall">
-          <img src="images/hall-1.jpg" alt="Learners in Assembly Hall"/>
-        </div>
-        <div class="about-photo">
-          <img src="images/classroom-1.jpg" alt="Classroom Learning"/>
-        </div>
-        <div class="about-photo">
-          <img src="images/graduation-1.jpg" alt="Grade R Graduation"/>
-        </div>
+        <div class="about-photo tall"><img src="images/hall-1.jpg" alt="Learners in Assembly Hall"/></div>
+        <div class="about-photo"><img src="images/classroom-1.jpg" alt="Classroom Learning"/></div>
+        <div class="about-photo"><img src="images/graduation-1.jpg" alt="Grade R Graduation"/></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ACADEMICS -->
 <section id="academics">
   <div class="container">
     <div class="section-label">Learning at Haladu</div>
@@ -385,22 +336,14 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
         <p>All learners study across the full CAPS subject offering appropriate to their phase, with strong emphasis on home language, English, and Mathematics.</p>
       </div>
       <div class="subject-tags">
-        <span class="stag">Mathematics</span>
-        <span class="stag">IsiZulu HL</span>
-        <span class="stag">English FAL</span>
-        <span class="stag">Natural Sciences</span>
-        <span class="stag">Social Sciences</span>
-        <span class="stag">Life Skills</span>
-        <span class="stag">Technology</span>
-        <span class="stag">Arts & Culture</span>
-        <span class="stag">EMS</span>
-        <span class="stag">Life Orientation</span>
+        <span class="stag">Mathematics</span><span class="stag">IsiZulu HL</span><span class="stag">English FAL</span>
+        <span class="stag">Natural Sciences</span><span class="stag">Social Sciences</span><span class="stag">Life Skills</span>
+        <span class="stag">Technology</span><span class="stag">Arts & Culture</span><span class="stag">EMS</span><span class="stag">Life Orientation</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEWS -->
 <section id="news">
   <div class="container">
     <div class="section-label">Latest Updates</div>
@@ -408,42 +351,23 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
     <p class="section-sub">Stay up to date with events, achievements, and important notices from Haladu Primary School.</p>
     <div class="news-grid">
       <div class="news-featured">
-        <div class="news-feat-img">
-          <img src="images/elections-1.jpg" alt="Student Elections"/>
-        </div>
+        <div class="news-feat-img"><img src="images/elections-1.jpg" alt="Student Elections"/></div>
         <div class="news-feat-body">
           <div class="news-feat-date">📅 Term 2 · 2025</div>
           <div class="news-feat-title">Student Representative Council Elections Held Successfully</div>
-          <div class="news-feat-text">Haladu Primary School hosted a vibrant and democratic SRC election process, with learners forming political parties, drafting manifestos, delivering speeches, and casting votes. The event, which saw the "Democratic Living Learners Party" among the contestants, modelled civic participation and democratic values for learners across all grades.</div>
+          <div class="news-feat-text">Haladu Primary School hosted a vibrant and democratic SRC election process, with learners forming political parties, drafting manifestos, delivering speeches, and casting votes. The event modelled civic participation and democratic values for learners across all grades.</div>
         </div>
       </div>
       <div class="news-list">
-        <div class="news-item">
-          <div class="news-item-tag">🎓 Milestone</div>
-          <div class="news-item-title">Grade 7 Farewell — Class of 2025 Celebrated</div>
-          <div class="news-item-date">End of Year · 2025</div>
-        </div>
-        <div class="news-item">
-          <div class="news-item-tag">👶 Foundation</div>
-          <div class="news-item-title">Grade R Graduation Ceremony — A Proud Moment for Families</div>
-          <div class="news-item-date">November · 2025</div>
-        </div>
-        <div class="news-item">
-          <div class="news-item-tag">🎤 Culture</div>
-          <div class="news-item-title">Choir & Cultural Performances at School Assembly</div>
-          <div class="news-item-date">Term 2 · 2025</div>
-        </div>
-        <div class="news-item">
-          <div class="news-item-tag">📋 Portal</div>
-          <div class="news-item-title">Term 1 & 2 Results Now Available on Learner Portal</div>
-          <div class="news-item-date">2025</div>
-        </div>
+        <div class="news-item"><div class="news-item-tag">🎓 Milestone</div><div class="news-item-title">Grade 7 Farewell — Class of 2025 Celebrated</div><div class="news-item-date">End of Year · 2025</div></div>
+        <div class="news-item"><div class="news-item-tag">👶 Foundation</div><div class="news-item-title">Grade R Graduation Ceremony — A Proud Moment for Families</div><div class="news-item-date">November · 2025</div></div>
+        <div class="news-item"><div class="news-item-tag">🎤 Culture</div><div class="news-item-title">Choir & Cultural Performances at School Assembly</div><div class="news-item-date">Term 2 · 2025</div></div>
+        <div class="news-item"><div class="news-item-tag">📋 Portal</div><div class="news-item-title">Term 1 & 2 Results Now Available on Learner Portal</div><div class="news-item-date">2025</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
   <div class="container">
     <div class="section-label">Photo Gallery</div>
@@ -457,44 +381,19 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
       <div class="gtab">Events</div>
     </div>
     <div class="gallery-grid">
-      <div class="gphoto wide">
-        <img src="images/elections-1.jpg" alt="Student Elections"/>
-        <div class="caption">Student Elections — Civic Leadership</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/candidates-1.jpg" alt="Election Candidates"/>
-        <div class="caption">Election candidates ready</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/flag-1.jpg" alt="SA Flag"/>
-        <div class="caption">Celebrating South Africa 🇿🇦</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/choir-1.jpg" alt="Choir"/>
-        <div class="caption">School choir at assembly</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/graduation-1.jpg" alt="Grade R Graduation"/>
-        <div class="caption">Grade R Graduation 2025</div>
-      </div>
-      <div class="gphoto wide">
-        <img src="images/farewell-1.jpg" alt="Grade 7 Farewell"/>
-        <div class="caption">Grade 7 Farewell — a proud day for Haladu</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/learning-1.jpg" alt="Classroom Learning"/>
-        <div class="caption">Active learning in the classroom</div>
-      </div>
-      <div class="gphoto">
-        <img src="images/assembly-1.jpg" alt="Assembly"/>
-        <div class="caption">School assembly — all grades</div>
-      </div>
+      <div class="gphoto wide"><img src="images/elections-1.jpg" alt="Student Elections"/><div class="caption">Student Elections — Civic Leadership</div></div>
+      <div class="gphoto"><img src="images/candidates-1.jpg" alt="Election Candidates"/><div class="caption">Election candidates ready</div></div>
+      <div class="gphoto"><img src="images/flag-1.jpg" alt="SA Flag"/><div class="caption">Celebrating South Africa 🇿🇦</div></div>
+      <div class="gphoto"><img src="images/choir-1.jpg" alt="Choir"/><div class="caption">School choir at assembly</div></div>
+      <div class="gphoto"><img src="images/graduation-1.jpg" alt="Grade R Graduation"/><div class="caption">Grade R Graduation 2025</div></div>
+      <div class="gphoto wide"><img src="images/farewell-1.jpg" alt="Grade 7 Farewell"/><div class="caption">Grade 7 Farewell — a proud day for Haladu</div></div>
+      <div class="gphoto"><img src="images/learning-1.jpg" alt="Classroom Learning"/><div class="caption">Active learning in the classroom</div></div>
+      <div class="gphoto"><img src="images/assembly-1.jpg" alt="Assembly"/><div class="caption">School assembly — all grades</div></div>
     </div>
     <p style="text-align:center;margin-top:20px;font-size:12px;color:var(--muted)">📸 Upload your actual photos to GitHub and replace the image placeholders — all your 19 photos will display here</p>
   </div>
 </section>
 
-<!-- STAFF -->
 <section id="staff">
   <div class="container">
     <div class="section-label">Our Educators</div>
@@ -519,7 +418,6 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
   </div>
 </section>
 
-<!-- PORTAL -->
 <section id="portal">
   <div class="container">
     <div class="portal-inner">
@@ -547,7 +445,6 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="section-label">Get In Touch</div>
@@ -578,34 +475,25 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="nav-logo" style="margin-bottom:12px;display:flex;align-items:center;gap:10px">
-          <div class="nav-emblem"><div class="logo-top">H·P</div><div class="logo-bot">Haladu Primary</div></div>
+        <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px">
+          <div class="nav-emblem"><img src="haladu-logo.svg" alt="Haladu Primary School Logo"/></div>
           <div class="nav-name" style="color:#fff;font-size:14px;font-weight:700">Haladu Primary School<span style="color:rgba(255,255,255,.4);font-size:10px;display:block">Nquthu · KwaZulu-Natal</span></div>
         </div>
         <p>A proudly KwaZulu-Natal school dedicated to quality education, strong values, and the holistic development of every learner in our community.</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#academics">Academics</a>
-        <a href="#news">News</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#staff">Staff</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">Home</a><a href="#about">About Us</a><a href="#academics">Academics</a>
+        <a href="#news">News</a><a href="#gallery">Gallery</a><a href="#staff">Staff</a><a href="#contact">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Learner Services</h4>
-        <a href="#portal">Learner Results Portal</a>
-        <a href="#portal">Term 1 Results</a>
-        <a href="#portal">Term 2 Results</a>
-        <a href="#news">School Calendar</a>
-        <a href="#contact">Admissions</a>
+        <a href="#portal">Learner Results Portal</a><a href="#portal">Term 1 Results</a>
+        <a href="#portal">Term 2 Results</a><a href="#news">School Calendar</a><a href="#contact">Admissions</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -619,11 +507,53 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 
-// ── Learner Data (for login validation only) ──
 const STUDENTS=[
-  {id:'HAL001',pw:'hal001'},
-  {id:'HAL002',pw:'hal002'},
+  {id:'HAL001',pw:'hal001',name:'Sifiso Mhlongo',grade:'Grade 5',year:'2025',terms:{
+    'Term 1':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:70,comment:'Good number sense. Long division needs more practice to build speed.',rec:'Practise 10 long division problems daily. Use the Moana maths worksheet pack.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:63,comment:'Reading fluency is improving. Writing sentences needs more confidence.',rec:'Write 3 sentences daily about your day — this builds writing confidence quickly.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:85,comment:'Excellent home language performance. Stories are creative and well-told.',rec:'Keep writing short stories. Try reading a Zulu storybook each week.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:68,comment:'Curious learner who asks great questions. Written answers need more detail.',rec:'Use the Moana science diagrams to help structure written answers.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:72,comment:'Good map work. History answers need to include more dates and facts.',rec:'Make a history timeline for each chapter — stick it on your wall at home.'},
+    ]},
+    'Term 2':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:75,comment:'Division speed has improved a lot. Fractions are the next challenge.',rec:'Focus on equivalent fractions using the Moana fraction worksheets.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:67,comment:'Sentence construction is much better. Paragraph writing is developing.',rec:'Write one full paragraph per day — describe a place, person or event.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:88,comment:'Outstanding — consistently the strongest IsiZulu learner in the class.',rec:'Challenge yourself with longer written tasks — you are ready for it.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:72,comment:'Written answers are more detailed now. Experiments are well-observed.',rec:'Always link your observation to the science concept being taught.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:76,comment:'History answers now include dates and facts. Map interpretation is great.',rec:'Continue building your history timeline — add Term 2 content to it now.'},
+    ]},
+    'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
+  }},
+  {id:'HAL002',pw:'hal002',name:'Phumzile Zungu',grade:'Grade 6',year:'2025',terms:{
+    'Term 1':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:66,comment:'Multiplication tables are solid. Percentages and ratios need more attention.',rec:'Use the Moana percentage game in the e-library — practise 15 min per day.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:71,comment:'Good reader. Written expression is improving well this term.',rec:'Read one chapter of an English book per day and write a 3-sentence summary.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:78,comment:'Strong oral participation. Written work is neat and shows good effort.',rec:'Work on essay structure — introduction, body and conclusion must be clear.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:61,comment:'Practical work is good. Theory responses need more scientific vocabulary.',rec:'Learn 5 new science words per week using the Moana science glossary.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:74,comment:'Good understanding of geography concepts. History needs more revision.',rec:'Create flashcards for all history key terms — test yourself before each assessment.'},
+    ]},
+    'Term 2':{released:true,subjects:[
+      {name:'Mathematics',lo:false,teacher:'Ms. N. Dube',mark:71,comment:'Percentages improving. Ratio problems are now approached with confidence.',rec:'Move on to proportion problems — the Moana workbook has a full section.'},
+      {name:'English FAL',lo:false,teacher:'Mr. T. Ndlovu',mark:75,comment:'Written work shows real improvement. Chapter summaries are well-structured.',rec:'Start writing 5-sentence summaries — this prepares you for Grade 7 essays.'},
+      {name:'IsiZulu HL',lo:false,teacher:'Ms. B. Gumede',mark:82,comment:'Essay structure has improved markedly. Oral presentation was very confident.',rec:'Challenge yourself — write a short Zulu opinion piece on a topic you care about.'},
+      {name:'Natural Sciences',lo:false,teacher:'Mr. K. Mthethwa',mark:66,comment:'Scientific vocabulary is growing. Continue linking words to concepts.',rec:'Draw and label diagrams from memory — this reinforces both vocab and concepts.'},
+      {name:'Social Sciences',lo:false,teacher:'Ms. F. Nzama',mark:79,comment:'Flashcard method is clearly working — notable improvement in history facts.',rec:'Now focus on explaining causes and effects — not just facts but reasons.'},
+    ]},
+    'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
+  }},
 ];
+
+function getLevel(m){
+  if(m>=80)return{num:7,label:'Outstanding Achievement',cls:'b7'};
+  if(m>=70)return{num:6,label:'Meritorious Achievement',cls:'b6'};
+  if(m>=60)return{num:5,label:'Substantial Achievement',cls:'b5'};
+  if(m>=50)return{num:4,label:'Adequate Achievement',cls:'b4'};
+  if(m>=40)return{num:3,label:'Moderate Achievement',cls:'b3'};
+  if(m>=30)return{num:2,label:'Elementary Achievement',cls:'b2'};
+  return{num:1,label:'Not Achieved',cls:'b1'};
+}
+function ini(n){return n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
 
 function portalLogin(){
   const id=document.getElementById('pid').value.trim().toUpperCase();
@@ -633,23 +563,131 @@ function portalLogin(){
   if(!id||!pw){err.textContent='Please enter your Learner ID and password.';err.style.display='block';return}
   const st=STUDENTS.find(s=>s.id===id&&s.pw===pw.toLowerCase());
   if(st){
-    window.open('results.html?id='+encodeURIComponent(id)+'&pw='+encodeURIComponent(pw),'_blank');
+    const newTab=window.open();
+    newTab.document.open();
+    newTab.document.write(buildResultsHTML(st));
+    newTab.document.close();
   } else {
     err.textContent='Incorrect Learner ID or password. Please try again.';
     err.style.display='block';
   }
 }
 
-// Allow Enter key to submit login
-document.addEventListener('keydown',function(e){
-  if(e.key==='Enter'){
-    const pid=document.getElementById('pid');
-    const ppw=document.getElementById('ppw');
-    if(document.activeElement===pid||document.activeElement===ppw){portalLogin();}
-  }
-});
+function buildResultsHTML(st){
+  const terms=Object.keys(st.terms);
+  const defTerm=terms.find(t=>st.terms[t].released)||terms[0];
 
-// Gallery tabs (visual only)
+  function tabsHTML(){
+    return terms.map(t=>{
+      const rel=st.terms[t].released;
+      return '<div class="ttab'+(t===defTerm?' active':'')+(rel?'':' locked')+'" data-term="'+t+'" onclick="'+(rel?'switchTerm(\''+t+'\',this)':'alert(\'Results for this term have not been released yet.\')')+'">'+t+(rel?'':'<span class="soon">Soon</span>')+'</div>';
+    }).join('');
+  }
+
+  function termHTML(term){
+    const subs=st.terms[term].subjects;
+    if(!subs||!subs.length) return '<p style="text-align:center;padding:40px;color:#666">Results for '+term+' have not been released yet.</p>';
+    const avg=Math.round(subs.reduce((a,s)=>a+s.mark,0)/subs.length);
+    const hi=subs.reduce((a,s)=>s.mark>a.mark?s:a);
+    const lo=subs.filter(s=>!s.lo).reduce((a,s)=>s.mark<a.mark?s:a);
+    const avgLvl=getLevel(avg);
+    const recs=subs.filter(s=>!s.lo&&s.mark<60).sort((a,b)=>a.mark-b.mark);
+    const showRecs=recs.length?recs:subs.filter(s=>!s.lo).sort((a,b)=>b.mark-a.mark).slice(0,3);
+    return '<div class="sum-row">'
+      +'<div class="sum-box"><div class="val">'+avg+'%</div><div class="lbl">Average</div></div>'
+      +'<div class="sum-box"><div class="val">Level '+avgLvl.num+'</div><div class="lbl">'+avgLvl.label+'</div></div>'
+      +'<div class="sum-box"><div class="val">'+subs.filter(s=>s.mark>=50).length+'/'+subs.length+'</div><div class="lbl">Passed</div></div>'
+      +'<div class="sum-box"><div class="val">'+hi.mark+'%</div><div class="lbl">Best: '+hi.name.split(' ')[0]+'</div></div>'
+      +'<div class="sum-box"><div class="val">'+lo.mark+'%</div><div class="lbl">Needs Work</div></div>'
+      +'</div>'
+      +'<table class="res-table"><thead><tr><th>Subject</th><th>Teacher</th><th>Mark (%)</th><th>Level</th><th>Achievement</th></tr></thead><tbody>'
+      +subs.map(s=>{const l=getLevel(s.mark);return'<tr><td><strong>'+s.name+'</strong>'+(s.lo?'<span class="lo-tag">LO</span>':'')+'</td><td style="color:#666;font-size:12px">'+s.teacher+'</td><td><strong>'+s.mark+'%</strong></td><td><span class="badge '+l.cls+'">Level '+l.num+'</span></td><td style="font-size:11px;font-weight:600;color:#444">'+l.label+'</td></tr>';}).join('')
+      +'<tr class="avg-r"><td colspan="2"><strong>Overall Average</strong></td><td><strong>'+avg+'%</strong></td><td><span class="badge '+avgLvl.cls+'">Level '+avgLvl.num+'</span></td><td style="font-size:11px;font-weight:600;color:#444">'+avgLvl.label+'</td></tr>'
+      +'</tbody></table>'
+      +'<div class="comments-panel"><h3>💬 Teacher Comments — '+term+'</h3>'
+      +subs.map(s=>'<div class="c-row"><div class="c-subj">'+s.name+'<div class="c-teacher">'+s.teacher+'</div></div><div class="c-text">'+s.comment+'</div></div>').join('')
+      +'</div>'
+      +'<div class="rec-panel"><h3>⭐ Personalised Improvement Recommendations</h3>'
+      +showRecs.map(s=>{const l=getLevel(s.mark);return'<div class="rec-item"><div class="rec-dot"></div><div class="rec-text"><span class="rec-subj">'+s.name+' — Level '+l.num+' ('+s.mark+'%):</span> '+s.rec+'</div></div>';}).join('')
+      +'</div>';
+  }
+
+  const allTermsHTML=terms.map(t=>'<div id="tc_'+t.replace(' ','_')+'" style="display:'+(t===defTerm?'block':'none')+'">'+termHTML(t)+'</div>').join('');
+
+  return '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">'
+    +'<title>Results — '+st.name+' · Haladu Primary School</title>'
+    +'<style>'
+    +'*{margin:0;padding:0;box-sizing:border-box}'
+    +':root{--navy:#1a2744;--navy2:#0f1a32;--gold:#f5c800;--gold2:#ffd700;--gold3:#c9a800;--light:#f8f6f0;--muted:#666;--border:#e0ddd5;}'
+    +'body{font-family:"Segoe UI",Arial,sans-serif;background:var(--light);color:#222;min-height:100vh}'
+    +'.top-bar{background:var(--navy);border-bottom:3px solid var(--gold);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}'
+    +'.top-left{display:flex;align-items:center;gap:10px}'
+    +'.emblem{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--navy)}'
+    +'.top-title{color:#fff;font-size:13px;font-weight:700;line-height:1.2}'
+    +'.top-title span{color:rgba(255,255,255,.45);font-size:10px;display:block;font-weight:400}'
+    +'.top-right{color:var(--gold);font-size:11px;font-weight:600}'
+    +'.container{max-width:960px;margin:0 auto;padding:32px 24px}'
+    +'.res-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px}'
+    +'.res-header h2{font-size:20px;font-weight:800;color:var(--navy)}'
+    +'.close-btn{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:700}'
+    +'.close-btn:hover{border-color:var(--navy);color:var(--navy)}'
+    +'.learner-banner{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px;border-left:5px solid var(--gold)}'
+    +'.l-av{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;font-weight:900;flex-shrink:0}'
+    +'.learner-banner h3{color:#fff;font-size:18px;font-weight:700}'
+    +'.learner-banner p{color:rgba(255,255,255,.55);font-size:12px;margin-top:3px}'
+    +'.ltags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}'
+    +'.ltag{background:rgba(200,168,75,.18);border:1px solid rgba(200,168,75,.3);color:var(--gold);padding:3px 12px;border-radius:20px;font-size:11px;font-weight:600}'
+    +'.sum-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:20px}'
+    +'.sum-box{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px;text-align:center}'
+    +'.sum-box .val{font-size:22px;font-weight:800;color:var(--navy)}'
+    +'.sum-box .lbl{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.4px}'
+    +'.term-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}'
+    +'.ttab{padding:9px 22px;border-radius:22px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted);transition:.15s}'
+    +'.ttab.active{background:var(--navy);color:#fff;border-color:var(--navy)}'
+    +'.ttab.locked{opacity:.4;cursor:not-allowed}'
+    +'.ttab .soon{font-size:9px;background:var(--gold);color:var(--navy);padding:2px 5px;border-radius:8px;margin-left:4px;font-weight:700}'
+    +'.res-table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);margin-bottom:20px}'
+    +'.res-table thead tr{background:var(--navy)}'
+    +'.res-table thead th{color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:700}'
+    +'.res-table thead th:nth-child(3),.res-table thead th:nth-child(4),.res-table thead th:nth-child(5){text-align:center}'
+    +'.res-table tbody tr{border-bottom:1px solid var(--border)}'
+    +'.res-table tbody tr:last-child{border-bottom:none}'
+    +'.res-table tbody td{padding:12px 16px;font-size:13px;vertical-align:middle}'
+    +'.res-table tbody td:nth-child(3),.res-table tbody td:nth-child(4),.res-table tbody td:nth-child(5){text-align:center}'
+    +'.avg-r{background:var(--light)}'
+    +'.avg-r td{font-weight:700;color:var(--navy)}'
+    +'.lo-tag{background:#fffde7;color:#795548;border:1px solid #ffe082;font-size:9px;padding:2px 6px;border-radius:6px;margin-left:5px;font-weight:700}'
+    +'.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:700}'
+    +'.b7{background:#1a237e;color:#fff}.b6{background:#1565c0;color:#fff}.b5{background:#2e7d32;color:#fff}'
+    +'.b4{background:#f57f17;color:#fff}.b3{background:#e65100;color:#fff}.b2{background:#b71c1c;color:#fff}.b1{background:#4a0000;color:#fff}'
+    +'.comments-panel{background:#fff;border-radius:14px;border:1.5px solid var(--border);padding:22px;margin-bottom:20px}'
+    +'.comments-panel h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}'
+    +'.c-row{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}'
+    +'.c-row:last-child{border-bottom:none;padding-bottom:0}'
+    +'.c-subj{min-width:140px;font-size:12px;font-weight:700;color:var(--navy);padding-top:2px}'
+    +'.c-teacher{font-size:10px;font-weight:400;color:var(--muted);margin-top:2px}'
+    +'.c-text{font-size:13px;color:#333;line-height:1.6;flex:1}'
+    +'.rec-panel{background:var(--navy);border-radius:14px;padding:22px;border:2px solid var(--gold);margin-bottom:20px}'
+    +'.rec-panel h3{color:var(--gold);font-size:13px;font-weight:700;margin-bottom:14px;text-transform:uppercase;letter-spacing:.6px}'
+    +'.rec-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start}'
+    +'.rec-item:last-child{margin-bottom:0}'
+    +'.rec-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;margin-top:5px;flex-shrink:0}'
+    +'.rec-text{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6}'
+    +'.rec-subj{color:var(--gold);font-weight:700}'
+    +'.footer-note{text-align:center;padding:24px;color:var(--muted);font-size:11px;border-top:1px solid var(--border)}'
+    +'</style></head><body>'
+    +'<div class="top-bar"><div class="top-left"><div class="emblem">HP</div><div class="top-title">Haladu Primary School<span>Nquthu · KwaZulu-Natal · EMIS 700210002</span></div></div><div class="top-right">Powered by Moana Technologies</div></div>'
+    +'<div class="container">'
+    +'<div class="res-header"><h2>📋 Learner Results</h2><button class="close-btn" onclick="window.close()">✕ Close Tab</button></div>'
+    +'<div class="learner-banner"><div class="l-av">'+ini(st.name)+'</div><div><h3>'+st.name+'</h3><p>Haladu Primary School · EMIS 700210002</p><div class="ltags"><span class="ltag">'+st.grade+'</span><span class="ltag">ID: '+st.id+'</span><span class="ltag">'+st.year+'</span></div></div></div>'
+    +'<div class="term-row">'+tabsHTML()+'</div>'
+    +'<div id="allTerms">'+allTermsHTML+'</div>'
+    +'</div>'
+    +'<div class="footer-note">Your results are secured by Moana Technologies · © 2025 Haladu Primary School</div>'
+    +'<script>function switchTerm(t,el){document.querySelectorAll(".ttab").forEach(x=>x.classList.remove("active"));el.classList.add("active");document.querySelectorAll("[id^=tc_]").forEach(x=>x.style.display="none");document.getElementById("tc_"+t.replace(" ","_")).style.display="block";}<\/script>'
+    +'</body></html>';
+}
+
 document.querySelectorAll('.gtab').forEach(t=>{
   t.addEventListener('click',function(){
     document.querySelectorAll('.gtab').forEach(x=>x.classList.remove('active'));
