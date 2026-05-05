@@ -16,7 +16,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);color:#222;
 nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);border-bottom:3px solid var(--gold);box-shadow:0 2px 20px rgba(0,0,0,.3)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-emblem{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center}.nav-emblem img{width:42px;height:42px;object-fit:contain}
+.nav-emblem{width:42px;height:42px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .nav-name{color:#fff;font-size:14px;font-weight:700;line-height:1.2}
 .nav-name span{color:var(--gold);font-size:10px;font-weight:400;display:block;letter-spacing:.5px}
 .nav-links{display:flex;gap:4px;align-items:center}
@@ -35,19 +35,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);borde
 .hero-bg{position:absolute;inset:0;background:url('images/Principal.jpg') left center/cover no-repeat;z-index:1}
 .hero-pattern{display:none}
 .hero-content{max-width:1100px;margin:0 auto;padding:60px 24px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,168,75,.15);border:1px solid rgba(200,168,75,.4);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:24px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:24px}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%}
 .hero h1{font-size:52px;font-weight:900;color:#fff;line-height:1.05;margin-bottom:12px;letter-spacing:-1px}
 .hero h1 span{color:var(--gold)}
-.hero-sub{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:32px;line-height:1.7;max-width:480px}
+.hero-sub{font-size:16px;color:#fff;margin-bottom:32px;line-height:1.7;max-width:480px}
 .hero-stats{display:flex;gap:32px;margin-bottom:36px}
 .stat{text-align:center}
 .stat-num{font-size:28px;font-weight:900;color:var(--gold);line-height:1}
-.stat-lbl{font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.stat-lbl{font-size:10px;color:#fff;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn-primary{background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,168,75,.3)}
-.btn-outline{border:2px solid rgba(255,255,255,.3);color:#fff;padding:14px 28px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-outline{border:2px solid #fff;color:#fff;padding:14px 28px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 .hero-visual{position:relative}
 .photo-stack{position:relative;height:480px}
@@ -57,7 +57,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);borde
 .photo-secondary img{width:100%;height:100%;object-fit:cover}
 .photo-accent{position:absolute;top:40px;left:10px;width:130px;height:130px;border-radius:12px;overflow:hidden;border:3px solid rgba(200,168,75,.3);box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .photo-accent img{width:100%;height:100%;object-fit:cover}
-.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.8px;text-transform:uppercase;cursor:pointer}
+.hero-scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:#fff;font-size:10px;letter-spacing:.8px;text-transform:uppercase;cursor:pointer}
 .scroll-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:bounce 1.5s infinite}
 @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 section{padding:80px 0}
@@ -214,7 +214,7 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#home">
-      <div class="nav-emblem"><img src="haladu-logo.svg" alt="Haladu Primary School Logo"/></div>
+      <div class="nav-emblem"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1a2744" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
       <div class="nav-name">Haladu Primary School<span>Nquthu · KwaZulu-Natal</span></div>
     </a>
     <div class="nav-links">
@@ -480,7 +480,7 @@ footer{background:var(--navy2);border-top:3px solid var(--gold);padding:40px 0 2
     <div class="footer-grid">
       <div class="footer-brand">
         <div style="margin-bottom:12px;display:flex;align-items:center;gap:10px">
-          <div class="nav-emblem"><img src="haladu-logo.svg" alt="Haladu Primary School Logo"/></div>
+          <div class="nav-emblem"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1a2744" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
           <div class="nav-name" style="color:#fff;font-size:14px;font-weight:700">Haladu Primary School<span style="color:rgba(255,255,255,.4);font-size:10px;display:block">Nquthu · KwaZulu-Natal</span></div>
         </div>
         <p>A proudly KwaZulu-Natal school dedicated to quality education, strong values, and the holistic development of every learner in our community.</p>
