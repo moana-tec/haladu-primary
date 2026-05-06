@@ -15,7 +15,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light);min-height:
 header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 .hdr{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
 .hdr-logo{display:flex;align-items:center;gap:12px}
-.hdr-emblem{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--navy)}
+.hdr-emblem{width:40px;height:40px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center}
 .hdr-name{color:#fff;font-size:14px;font-weight:700;line-height:1.2}
 .hdr-name span{color:rgba(255,255,255,.45);font-size:10px;font-weight:400;display:block}
 .hdr-right{display:flex;align-items:center;gap:12px}
@@ -25,7 +25,7 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 #loginPage{display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 62px);padding:24px}
 .login-box{background:#fff;border-radius:20px;border:1.5px solid var(--border);overflow:hidden;width:100%;max-width:420px;box-shadow:0 8px 40px rgba(0,0,0,.1)}
 .login-head{background:var(--navy);padding:32px 28px;text-align:center;border-bottom:4px solid var(--gold)}
-.login-icon{width:68px;height:68px;background:rgba(245,200,0,.15);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:var(--gold);margin:0 auto 14px}
+.login-icon{width:68px;height:68px;background:rgba(245,200,0,.15);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
 .login-head h2{color:#fff;font-size:18px;font-weight:700;margin-bottom:4px}
 .login-head p{color:rgba(255,255,255,.45);font-size:11px}
 .login-body{padding:28px}
@@ -42,8 +42,11 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 #resultsPage{display:none;padding:32px 24px;max-width:1000px;margin:0 auto}
 .res-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
 .res-topbar h2{font-size:20px;font-weight:800;color:var(--navy)}
-.signout{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600}
+.topbar-btns{display:flex;gap:10px;align-items:center}
+.signout{background:none;border:1.5px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:8px;font-size:12px;cursor:pointer;font-weight:600;transition:.2s}
 .signout:hover{border-color:var(--navy);color:var(--navy)}
+.back-to-site{background:var(--navy);color:#fff;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;transition:.2s}
+.back-to-site:hover{background:var(--navy2)}
 .learner-card{background:var(--navy);border-radius:16px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:16px;border-left:5px solid var(--gold)}
 .lav{width:54px;height:54px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;font-weight:900;flex-shrink:0}
 .linfo h3{color:#fff;font-size:18px;font-weight:700}
@@ -98,24 +101,26 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
 </style>
 </head>
 <body>
+
 <header>
   <div class="hdr">
     <div class="hdr-logo">
-      <div class="hdr-emblem">HP</div>
+      <div class="hdr-emblem"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1a2744" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
       <div class="hdr-name">Haladu Primary School<span>Learner Results Portal</span></div>
     </div>
     <div class="hdr-right">
       <span class="moana-badge">Powered by Moana Technologies</span>
-      <a href="index.html" class="back-btn">← Back to Website</a>
+      <a href="index.html" class="back-btn">&#8592; Back to Website</a>
     </div>
   </div>
 </header>
+
 <div id="loginPage">
   <div class="login-box">
     <div class="login-head">
-      <div class="login-icon">HP</div>
+      <div class="login-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f5c800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
       <h2>Haladu Primary School</h2>
-      <p>EMIS: 700210002 · Nquthu, KwaZulu-Natal</p>
+      <p>EMIS: 700210002 &middot; Nquthu, KwaZulu-Natal</p>
     </div>
     <div class="login-body">
       <div class="err" id="errMsg">Incorrect Learner ID or password. Please try again.</div>
@@ -125,20 +130,24 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
         <span id="btnTxt">Sign In to View Results</span>
         <div class="spin" id="spin"></div>
       </button>
-      <p class="login-note">🔒 Your results are secured by Moana Technologies</p>
+      <p class="login-note">&#128274; Your results are secured by Moana Technologies</p>
     </div>
   </div>
 </div>
+
 <div id="resultsPage">
   <div class="res-topbar">
-    <h2>📋 Learner Results</h2>
-    <button class="signout" onclick="doSignOut()">← Sign Out</button>
+    <h2>&#128203; Learner Results</h2>
+    <div class="topbar-btns">
+      <a href="index.html" class="back-to-site">&#127EB; Back to Website</a>
+      <button class="signout" onclick="doSignOut()">&#8592; Sign Out</button>
+    </div>
   </div>
   <div class="learner-card">
     <div class="lav" id="resAv">?</div>
     <div class="linfo">
       <h3 id="resName">Learner</h3>
-      <p>Haladu Primary School · EMIS 700210002 · Nquthu, KwaZulu-Natal</p>
+      <p>Haladu Primary School &middot; EMIS 700210002 &middot; Nquthu, KwaZulu-Natal</p>
       <div class="ltags">
         <span class="ltag" id="resGrade"></span>
         <span class="ltag" id="resID"></span>
@@ -150,13 +159,13 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
   <div class="legend">
     <h4>NSC Level of Achievement</h4>
     <div class="legend-items">
-      <div class="leg"><div class="leg-dot" style="background:#1a237e">7</div>80–100% Outstanding</div>
-      <div class="leg"><div class="leg-dot" style="background:#1565c0">6</div>70–79% Meritorious</div>
-      <div class="leg"><div class="leg-dot" style="background:#2e7d32">5</div>60–69% Substantial</div>
-      <div class="leg"><div class="leg-dot" style="background:#f57f17">4</div>50–59% Adequate</div>
-      <div class="leg"><div class="leg-dot" style="background:#e65100">3</div>40–49% Moderate</div>
-      <div class="leg"><div class="leg-dot" style="background:#b71c1c">2</div>30–39% Elementary</div>
-      <div class="leg"><div class="leg-dot" style="background:#4a0000">1</div>0–29% Not Achieved</div>
+      <div class="leg"><div class="leg-dot" style="background:#1a237e">7</div>80&ndash;100% Outstanding</div>
+      <div class="leg"><div class="leg-dot" style="background:#1565c0">6</div>70&ndash;79% Meritorious</div>
+      <div class="leg"><div class="leg-dot" style="background:#2e7d32">5</div>60&ndash;69% Substantial</div>
+      <div class="leg"><div class="leg-dot" style="background:#f57f17">4</div>50&ndash;59% Adequate</div>
+      <div class="leg"><div class="leg-dot" style="background:#e65100">3</div>40&ndash;49% Moderate</div>
+      <div class="leg"><div class="leg-dot" style="background:#b71c1c">2</div>30&ndash;39% Elementary</div>
+      <div class="leg"><div class="leg-dot" style="background:#4a0000">1</div>0&ndash;29% Not Achieved</div>
     </div>
   </div>
   <div class="term-tabs" id="termTabs"></div>
@@ -165,15 +174,16 @@ header{background:var(--navy);border-bottom:4px solid var(--gold);padding:0}
     <tbody id="resBody"></tbody>
   </table>
   <div class="comments-box">
-    <div class="box-title" id="commentsTitle">💬 Teacher Comments</div>
+    <div class="box-title" id="commentsTitle">&#128172; Teacher Comments</div>
     <div id="commentsBody"></div>
   </div>
   <div class="rec-box">
-    <h3>⭐ Personalised Improvement Recommendations</h3>
+    <h3>&#11088; Personalised Improvement Recommendations</h3>
     <div id="recBody"></div>
   </div>
-  <div class="footer-note">Results secured by Moana Technologies · Haladu Primary School · EMIS 700210002</div>
+  <div class="footer-note">Results secured by Moana Technologies &middot; Haladu Primary School &middot; EMIS 700210002</div>
 </div>
+
 <script>
 const STUDENTS=[
   {id:'HAL001',pw:'hal001',name:'Sifiso Mhlongo',grade:'Grade 5',year:'2025',terms:{
@@ -211,6 +221,7 @@ const STUDENTS=[
     'Term 3':{released:false,subjects:[]},'Term 4':{released:false,subjects:[]},
   }},
 ];
+
 function getLevel(m){
   if(m>=80)return{num:7,label:'Outstanding Achievement',cls:'b7'};
   if(m>=70)return{num:6,label:'Meritorious Achievement',cls:'b6'};
@@ -221,7 +232,9 @@ function getLevel(m){
   return{num:1,label:'Not Achieved',cls:'b1'};
 }
 function ini(n){return n.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
+
 let cur=null,curTerm=null;
+
 function doLogin(){
   const id=document.getElementById('lid').value.trim().toUpperCase();
   const pw=document.getElementById('lpw').value;
@@ -239,6 +252,7 @@ function doLogin(){
     else{err.textContent='Incorrect Learner ID or password. Please try again.';err.style.display='block';}
   },700);
 }
+
 function showResults(){
   document.getElementById('loginPage').style.display='none';
   document.getElementById('resultsPage').style.display='block';
@@ -251,21 +265,23 @@ function showResults(){
   curTerm=terms.find(t=>cur.terms[t].released)||terms[0];
   document.getElementById('termTabs').innerHTML=terms.map(t=>{
     const rel=cur.terms[t].released;
-    return`<div class="ttab${t===curTerm?' active':''}${rel?'':' locked'}" onclick="${rel?`switchTerm('${t}',this)`:'alert(\"Results for this term have not been released yet.\")'}">
+    return`<div class="ttab${t===curTerm?' active':''}${rel?'':' locked'}" onclick="${rel?`switchTerm('${t}',this)`:'alert(\'Results for this term have not been released yet.\')'}">
       ${t}${rel?'':'<span class="soon">Soon</span>'}
     </div>`;
   }).join('');
   renderTerm(curTerm);
   window.scrollTo(0,0);
 }
+
 function switchTerm(t,el){
   document.querySelectorAll('.ttab').forEach(x=>x.classList.remove('active'));
   el.classList.add('active');
   curTerm=t;renderTerm(t);
 }
+
 function renderTerm(term){
   const subs=cur.terms[term].subjects;
-  document.getElementById('commentsTitle').textContent=`💬 Teacher Comments — ${term}`;
+  document.getElementById('commentsTitle').textContent='💬 Teacher Comments — '+term;
   if(!subs||!subs.length){
     document.getElementById('sumGrid').innerHTML='';
     document.getElementById('resBody').innerHTML=`<tr><td colspan="5" style="text-align:center;padding:28px;color:var(--muted);font-size:13px">Results for ${term} have not been released yet.</td></tr>`;
@@ -307,6 +323,7 @@ function renderTerm(term){
     <div class="rec-text"><span class="rec-subj">${s.name} — Level ${l.num} (${s.mark}%):</span> ${s.rec}</div>
     </div>`}).join('');
 }
+
 function doSignOut(){
   cur=null;curTerm=null;
   document.getElementById('lid').value='';
@@ -316,16 +333,8 @@ function doSignOut(){
   document.getElementById('loginPage').style.display='flex';
   window.scrollTo(0,0);
 }
+
 document.addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
-window.addEventListener('load',()=>{
-  const params=new URLSearchParams(window.location.search);
-  const id=params.get('id');
-  const pw=params.get('pw');
-  if(id&&pw){
-    const st=STUDENTS.find(s=>s.id===id.toUpperCase()&&s.pw===pw.toLowerCase());
-    if(st){cur=st;showResults();}
-  }
-});
 </script>
 </body>
 </html>
